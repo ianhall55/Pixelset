@@ -22,10 +22,18 @@ column name | data type | details
 id          | integer   | not null, primary key
 album_id    | integer   | not null, foreign key (references albums), indexed
 title       | string    | not null
+ord         | integer   | not null
+
+## photo_set_taggings
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+photo_id    | integer   | not null, foreign key (references photos), indexed
+photo_set_id| integer   | not null, foreign key (references photoSets), indexed
+ord         | integer   | not null
 
 ## photos
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 photo       | bytea     | not null
-photo_set_id| integer   | not null, foreign key (references photo sets), indexed

@@ -1,4 +1,4 @@
-# FresherNote
+# Memry
 
 [Heroku link][heroku] **Note:** This will be link to production site
 
@@ -37,16 +37,16 @@ Memry is a web application inspired by Pixieset and Flickr built using Ruby on R
 * [Redux Structure][redux-structure]
 * [Sample State][sample-state]
 
-[wireframes]: docs/wireframes
-[components]: docs/component-heirarchy.md
-[redux-structure]: docs/redux-structure.md
-[sample-state]: docs/sample-state.md
-[api-endpoints]: docs/api-endpoints.md
-[schema]: docs/schema.md
+[wireframes]: wireframes
+[components]: component-heirarchy.md
+[redux-structure]: redux-structure.md
+[sample-state]: sample-state.md
+[api-endpoints]: api-endpoints.md
+[schema]: schema.md
 
 ## Implementation Timeline
 
-### Phase 1: Backend setup and Front End User Authentication (2 days)
+### Phase 1: Backend setup and Front End User Authentication (1 day)
 
 **Objective:** Functioning rails project with front-end Authentication
 
@@ -63,68 +63,63 @@ Memry is a web application inspired by Pixieset and Flickr built using Ruby on R
 - [ ] Seed users
 - [ ] Review phase 1
 
-### Phase 2: Photos Model, API, and components (2 days)
+### Phase 2: Albums Model, API, and components (2 days)
 
-**Objective:** Photos can be created and destroyed through
+**Objective:** Albums can be created and destroyed through
 the API.
 
+- [ ] `Album` model
+- [ ] Seed database with a small amount of test data
+- [ ] CRUD API for albums (`albumsController`)
+- [ ] JBuilder views for albums
+- Album components and respective Redux loops
+  - [ ] `AlbumsIndex`
+  - [ ] `AlbumIndexItem`
+  - [ ] `AlbumForm`
+- [ ] Style albums components
+- [ ] Seed albums
+
+### Phase 3: PhotoSets (1 day)
+
+**Objective:** PhotoSets belong to albums that can be created, read, edited and destroyed through the API.
+
+- [ ] `PhotoSet` model
+- [ ] Seed database with a small amount of test data
+- [ ] CRUD API for photoSets (`PhotoSetsController`)
+- [ ] JBuilder views for photoSets
+- [ ] Adding photos requires a photoSet
+- [ ] Moving photos between photoSets
+- [ ] Viewing photos by photoSet
+- [ ] Style photoSet components
+- [ ] Seed photoSets
+
+### Phase 4: Photos (1 day)
+
+**Objective:** Photos belong to photoSets and can be added, edited, and destroyed
+
 - [ ] `Photo` model
-- [ ] Seed database with a small amount of test data
-- [ ] CRUD API for notes (`NotesController`)
-- [ ] JBuilder views for notes
-- Note components and respective Redux loops
-  - [ ] `NotesIndex`
-  - [ ] `NoteIndexItem`
-  - [ ] `NoteForm`
-- [ ] Autosave notes feature
-- [ ] Style notes components
-- [ ] Seed notes
+- [ ] Fetching photos for photosets
+- [ ] Style photo components
+- [ ] Seed photos with seed data
 
-### Phase 3: Notebooks (2 day)
+### Phase 5: Add in Gallery viewing feature (1 day)
 
-**Objective:** Notes belong to Notebooks that can be created, read, edited and destroyed through the API.
+**objective:** Add in gallery for stylish viewing of photo album
 
-- [ ] `Notebook` model
-- [ ] Seed database with a small amount of test data
-- [ ] CRUD API for notes (`NotebooksController`)
-- [ ] JBuilder views for notebooks
-- [ ] Adding notes requires a notebook
-- [ ] Moving notes between notebooks
-- [ ] Viewing notes by notebook
-- [ ] Style notebook components
-- [ ] Seed notebooks
+- [ ] Add gallery components
+- [ ] Add Gallery styling to seeded notes
 
-### Phase 4: Tags (1 days)
+### Phase 6: Splash page
 
-**Objective:** Notes can be tagged with multiple tags, and tags are searchable.
+**objective:** Add extra features to photos, photosets, add splash page
 
-- [ ] `Tag` model and `Taggings` join table
-- [ ] Fetching tags for notes
-- [ ] Adding tags to notes
-- [ ] Searching notes by tag
-- [ ] Style search & tag components
-- [ ] Seed tags with seed data
-
-### Phase 5: Allow Complex Styling in Notes (1 days, W2 Th 6pm)
-
-**objective:** Allow rich text editing of notes.
-
-- [ ] Integrate `react-quill` (based on Quill.js).
-- [ ] Rails helpers to sanitize HTML before rendering.
-- [ ] Style Quill components.
-- [ ] Add Quill styling to seeded notes
-
-### Phase 6: - Pagination / infinite scroll for Notes Index (1 day, W2 F 6pm)
-
-**objective:** Add infinite scroll to Notes Index
-
-- [ ] Paginate Notes Index API to send 20 results at a time
-- [ ] Append next set of results when user scrolls and is near bottom
-- [ ] Style scroll components and transitions
-- [ ] Ensure seed data demonstrates infinite scroll
+- [ ] Add drag and drop feature to order photos
+- [ ] Add drag and drop feature to order photoSets
+- [ ] Add html components to splash page
+- [ ] Style splash page
 
 ### Bonus Features (TBD)
-- [ ] Search notes by content
-- [ ] Set reminders on notes
-- [ ] Changelogs for Notes
-- [ ] Multiple sessions
+- [ ] slideshow feature for gallery
+- [ ] Add photos page to show collection of all photos for user
+- [ ] Add Shared Events page where users can share event albums with other users
+- [ ] Add photostream with favorites, comments
