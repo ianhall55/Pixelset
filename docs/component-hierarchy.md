@@ -36,8 +36,8 @@
 |Path   | Component   |
 |-------|-------------|
 | "/" | "SplashContainer" |
-| "/sign-up" | "AuthFormContainer" |
-| "/sign-in" | "AuthFormContainer" |
+| "/signin" | "Login" |
+| "/signup" | "Signup" |
 | "/home" | "HomeContainer" |
 | "/home/album/:id" | "AlbumContainer" |
 | "/home/album/:id/set/:id" | "PhotoSetContainer" |

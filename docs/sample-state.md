@@ -14,33 +14,43 @@
   albums: {
     1: {
       title: "Ian's Album",
+      ownerId: 1,
       photoSets: {
         1: {
           title: "first set",
-          photos: [
-            1,2,3
-          ]
-        },
-        albumId
-      },
-      ownerId: 1
+          ord: 2,
+          albumId: 1,
+          photos: {
+            1: {
+              photoSetId: 1,
+              ord: 1,
+              photo: jpeg
+            }
+          }
+        }
+      }
     }
   },
   gallery: {
     album: {
       1: {
         title: "Ian's Album",
+        ownerId: 1,
         photoSets: {
           1: {
             title: "first set",
-            photos: [
-              1,2,3
-            ]
-          },
-          albumId
-        },
-        ownerId: 1
+            ord: 2,
+            albumId: 1,
+            photos: {
+              1: {
+                photoSetId: 1,
+                ord: 1,
+                photo: jpeg
+              }
+            }
+          }
+        }
       }
-  }
-}
+    }
+  };
 ```
