@@ -1,7 +1,10 @@
 ## Component Hierarchy
 
-**AuthFormContainer**
- - AuthForm
+**SignupFormContainer**
+ - SignupForm
+
+**LoginFormContainer**
+ - LoginForm
 
 **SplashContainer**
  - Home

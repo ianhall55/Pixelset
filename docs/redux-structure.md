@@ -4,18 +4,18 @@
 
 ### Session API Request Actions
 
-* `signUp`
+* `signup`
   0. invoked from `SignupForm` `onSubmit`
   0. `POST /api/users` is called.
   0. `receiveCurrentUser` is set as the success callback.
-* `logIn`
-  0. invoked from `UserNavbar` `onSubmit`
+* `login`
+  0. invoked from `LoginForm` `onSubmit`
   0. `POST /api/session` is called.
   0. `receiveCurrentUser` is set as the callback.
-* `logOut`
-  0. invoked from `UserNavbar` `onClick`
+* `logout`
+  0. invoked from `HomeHeader` `onClick`
   0. `DELETE /api/session` is called.
-  0. `removeCurrentUser` is set as the success callback.
+  0. `logout` is set as the success callback.
 * `fetchCurrentUser`
   0. invoked from `App` in `didMount`
   0. `GET /api/session` is called.
@@ -26,9 +26,12 @@
 * `receiveCurrentUser`
   0. invoked from an API callback
   0. the `SessionReducer` stores `currentUser` in the application's state.
-* `removeCurrentUser`
+* `receiveErrors`
   0. invoked from an API callback
-  0. the `SessionReducer` removes `currentUser` from the application's state.
+  0. the `SessionReducer` stores `errors` from the application's state.
+* `logout`
+  0. invoked form an API callback
+  0. the `SessionReducer` returns `nullUser` for the application's state
 
 ## Error Cycles
 
