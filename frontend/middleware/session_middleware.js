@@ -8,10 +8,12 @@ const SessionMiddleware = ({getState, dispatch}) => next => action => {
   };
   switch (action.type) {
     case SessionConstants.SIGNUP:
+      debugger;
       const signupSuccess = (data) => (dispatch(receiveCurrentUser(data)));
       signup(action.user, signupSuccess, errorCallback);
       return next(action);
     case SessionConstants.LOGIN:
+      debugger;
       const loginSuccess = (data) => (dispatch(receiveCurrentUser(data)));
       login(action.user, loginSuccess, errorCallback);
       return next(action);
