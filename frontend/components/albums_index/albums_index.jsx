@@ -7,10 +7,20 @@ class AlbumsIndex extends React.Component {
   }
 
   render() {
+    const albumLines = [];
+    for (let id in this.props.albums) {
+      albumLines.push(
+        <li key={id}>{this.props.albums[id].title}</li>
+      );
+    }
+
     return(
       <div className="albums-page">
         <HomeHeaderContainer />
-
+        <h2>Albums</h2>
+        <ul>
+          {albumLines}
+        </ul>
 
       </div>
     );

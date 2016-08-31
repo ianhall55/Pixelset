@@ -9,3 +9,6 @@
 
 User.create!({name: 'Ian Hall', username: 'ian', email: 'ian@gmail.com',
   password: 'password'})
+
+Album.create!({title: 'Thailand Vacation', owner_id: 1});
+Album.create!({title: 'Costa Rica Vacation', owner_id: 1});

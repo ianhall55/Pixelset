@@ -13,7 +13,6 @@ const SessionReducer = function(state = _defaultState, action){
       console.log(currentUser);
       return merge({}, _defaultState, {currentUser});
     case SessionConstants.LOGOUT:
-      ;
       return _defaultState;
     case SessionConstants.RECEIVE_ERRORS:
     const errors = action.errors;

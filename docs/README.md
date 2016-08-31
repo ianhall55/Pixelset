@@ -2,7 +2,7 @@
 
 [Heroku link][heroku] **Note:** This will be link to production site
 
-[heroku]: http://www.herokuapp.com
+[heroku]: https://memrys.herokuapp.com/
 
 ## Minimum Viable Product
 

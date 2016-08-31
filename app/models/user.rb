@@ -51,6 +51,9 @@ class User < ActiveRecord::Base
     pot_user.is_password?(password) ? pot_user : nil
   end
 
-
+  has_many :albums,
+    primary_key: :id,
+    foreign_key: :owner_id,
+    class_name: :Album
 
 end
