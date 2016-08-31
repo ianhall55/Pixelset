@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, hashHistory } from 'react-router';
+import { withRouter } from 'react-router';
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -22,7 +23,7 @@ class SignupForm extends React.Component {
 
   redirectIfLoggedIn(){
     if (this.props.loggedIn) {
-      hashHistory.push("/");
+      hashHistory.push("/home");
     }
   }
 
@@ -34,6 +35,7 @@ class SignupForm extends React.Component {
     e.preventDefault();
     const user = this.state;
     this.props.signup({user});
+    hashHistory.push("/home");
   }
 
   renderErrors() {
@@ -54,9 +56,8 @@ class SignupForm extends React.Component {
     return(
       <div className="login-form-container">
 				<form onSubmit={this.handleSubmit} className="login-form-box">
-					Welcome to Memry!
+					<label className="form-title">M E M R Y S</label>
 					<br/>
-					Sign up
 					{ this.renderErrors() }
 					<div className="login-form">
             <br />
@@ -93,8 +94,11 @@ class SignupForm extends React.Component {
 
 						<br />
 						<input type="submit" value="GET STARTED" />
+            <br />
+              <label className="form-footer">
+                Already have and account? { <Link to="/login">Log in</Link> }
+              </label>
 
-          Already have and account? { <Link to="/login">Log in</Link> }
 					</div>
 				</form>
 			</div>
@@ -103,4 +107,4 @@ class SignupForm extends React.Component {
 }
 
 
-export default SignupForm;
+export default withRouter(SignupForm);

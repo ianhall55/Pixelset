@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, hashHistory } from 'react-router';
+import { Link, hashHistory, withRouter } from 'react-router';
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -20,7 +20,7 @@ class LoginForm extends React.Component {
 
   redirectIfLoggedIn(){
     if (this.props.loggedIn) {
-      hashHistory.push("/");
+      hashHistory.push("/home");
     }
   }
 
@@ -52,29 +52,32 @@ class LoginForm extends React.Component {
     return(
       <div className="login-form-container">
 				<form onSubmit={this.handleSubmit} className="login-form-box">
-					Welcome to Memry!
+					<label className="form-title">M E M R Y S</label>
 					<br/>
-					Please Login or { <Link to="/signup">Sign up</Link> }
 					{ this.renderErrors() }
 					<div className="login-form">
 						<br />
-						<label> Username:
+						<label> Username:</label>
 							<input type="text"
 								value={this.state.username}
 								onChange={this.update("username")}
 								className="login-input" />
-						</label>
+
 
 						<br />
-						<label> Password:
+						<label> Password: </label>
 							<input type="password"
 								value={this.state.password}
 								onChange={this.update("password")}
 								className="login-input" />
-						</label>
+
 
 						<br />
-						<input type="submit" value="Submit" />
+						<input type="submit" value="LOGIN" />
+            <br/>
+            <label className="form-footer">
+              Don't have an account? { <Link to="/signup">Sign up</Link> }
+            </label>
 					</div>
 				</form>
 			</div>
@@ -83,4 +86,4 @@ class LoginForm extends React.Component {
 }
 
 
-export default LoginForm;
+export default withRouter(LoginForm);
