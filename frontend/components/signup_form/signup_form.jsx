@@ -35,17 +35,18 @@ class SignupForm extends React.Component {
     e.preventDefault();
     const user = this.state;
     this.props.signup({user});
-    hashHistory.push("/home");
   }
 
   renderErrors() {
+    const errorLines = this.props.errors.map( (error, i) => (
+      <li className="error" key={i}>
+        {error}
+      </li>
+    ));
+
     return(
 			<ul>
-				{this.props.errors.map( (error, i) => (
-					<li key={i}>
-						{error}
-					</li>
-				))}
+        {errorLines}
 			</ul>
 		);
 
@@ -56,7 +57,7 @@ class SignupForm extends React.Component {
     return(
       <div className="login-form-container">
 				<form onSubmit={this.handleSubmit} className="login-form-box">
-					<label className="form-title">M E M R Y S</label>
+          {<Link to="/" className="form-title">M E M R Y S</Link>}
 					<br/>
 					{ this.renderErrors() }
 					<div className="login-form">
@@ -93,7 +94,7 @@ class SignupForm extends React.Component {
 						</label>
 
 						<br />
-						<input type="submit" value="GET STARTED" />
+						<input className="login-submit" type="submit" value="GET STARTED" />
             <br />
               <label className="form-footer">
                 Already have and account? { <Link to="/login">Log in</Link> }

@@ -5,29 +5,31 @@ class Api::AlbumsController < ApplicationController
   end
 
   def show
-
-  end
-
-  def new
-
+    render json: Album.find(params[:id])
   end
 
   def create
-
-  end
-
-  def edit
+    @album = Album.new(album_params)
+    if @album.save
+      render :show
+    else
+      render json: @album.errors.full_messages, status: 422
+    end
   end
 
   def update
-
+    @album = Album.find(album_params[:id])
+    @album.update(album_params)
+    render :show
   end
 
   def destroy
-
+    @album = Album.find(params[:id])
+    @album.destroy
+    render json: @album
   end
 
   def album_params
-    params.require(:album).permit(:user)
+    params.require(:album).permit(:id, :title, :event_date, :owner_id)
   end
 end

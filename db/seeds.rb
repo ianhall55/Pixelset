@@ -10,5 +10,5 @@
 User.create!({name: 'Ian Hall', username: 'ian', email: 'ian@gmail.com',
   password: 'password'})
 
-Album.create!({title: 'Thailand Vacation', owner_id: 1});
-Album.create!({title: 'Costa Rica Vacation', owner_id: 1});
+Album.create!({title: 'Thailand Vacation', owner_id: 1, event_date: "15/01/2012"});
+Album.create!({title: 'Costa Rica Vacation', owner_id: 1, event_date: "20/12/2015"});

@@ -4,11 +4,11 @@ form.login-form-box {
     margin-right: auto;
     padding-left: 15px;
     padding-right: 15px;
-    display: flex;
+    /* display: flex; */
     align-items: center;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
+    /* flex-direction: column; */
+    /* flex-wrap: wrap; */
+    /* justify-content: center; */
 }
 
 body {
@@ -24,16 +24,27 @@ label.form-title {
     color: #000;
     font-family: Roboto, sans-serif;
     /* margin-bottom: 10%; */
+    display: block;
+}
+
+.form-title {
+    text-decoration: none;
+    font-size: 32px;
+    text-align: center;
+    font-weight: 100;
+    color: #000;
+    font-family: Roboto, sans-serif;
+    /* margin-bottom: 10%; */
+    display: block;
 }
 
 input.login-input {
     font-size: 24px;
     font-weight: 300;
     height: auto;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     padding: 15px;
     line-height: 25px;
-    border: 1px solid #DDD;
     border-radius: 0;
     width: 90%;
 }
@@ -50,22 +61,32 @@ input[type="submit"] {
     font-weight: 400;
 }
 
+input.login-submit[type="submit"] {
+  display: block;
+  margin: auto;
+}
+
 label.form-footer {
   font-size: 14px;
   width: 98%;
   margin: 0 auto;
   margin-top: 5px;
   color: #666;
+  display: block;
+  margin: auto;
   text-align: center;
 }
 
 
 .login-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: space-between; */
+    /* align-items: center; */
     width: 300px;
+    display: block;
+    margin: auto;
+    vertical-align: center;
 }
 
 
@@ -92,4 +113,21 @@ h2.splash-link {
     background: #1abc9c;
     width: 60px;
     text-align: center;
+}
+
+button, input[type="submit"] {
+ cursor: pointer;
+ transition: filter .3s, -webkit-filter .3s;
+}
+
+button:hover, input[type="submit"]:hover {
+ filter: brightness(85%);
+ -webkit-filter: brightness(85%);
+}
+
+li.error {
+  display: block;
+  margin: auto;
+  color: red;
+  text-align: center;
 }

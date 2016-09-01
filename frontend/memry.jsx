@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store.js';
 import Root from './components/root.jsx';
 import { login, logout, signup, receiveCurrentUser, receiveErrors} from './actions/session_actions';
-import { fetchAlbumsForUser } from './actions/albums_actions';
+import { fetchAlbumsForUser, addAlbum, destroyAlbum, updateAlbum } from './actions/albums_actions';
+import Modal from 'react-modal';
 
 document.addEventListener("DOMContentLoaded", () => {
   const orgError = console.error; // eslint-disable-line no-console
@@ -21,9 +22,10 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     store = configureStore();
   }
+  window.store = store;
 
   const root = document.getElementById("root");
-  window.store = store;
+  Modal.setAppElement(document.body);
   ReactDOM.render(<Root store={store} />, root);
 });
 
@@ -35,3 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
 window.receiveErrors = receiveErrors;
 window.user = {user: {username: 'ian', password: 'password'}};
 window.fetchAlbumsForUser = fetchAlbumsForUser;
+window.addAlbum = addAlbum;
+window.destroyAlbum = destroyAlbum;
+window.updateAlbum = updateAlbum;
+window.album = {album: {title: "SF", event_date: new Date("01/05/2015"), owner_id: 1}};

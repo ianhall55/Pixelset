@@ -38,7 +38,7 @@ class LoginForm extends React.Component {
     return(
 			<ul>
 				{this.props.errors.map( (error, i) => (
-					<li key={i}>
+					<li className="error" key={i}>
 						{error}
 					</li>
 				))}
@@ -52,7 +52,7 @@ class LoginForm extends React.Component {
     return(
       <div className="login-form-container">
 				<form onSubmit={this.handleSubmit} className="login-form-box">
-					<label className="form-title">M E M R Y S</label>
+          {<Link to="/" className="form-title">M E M R Y S</Link>}
 					<br/>
 					{ this.renderErrors() }
 					<div className="login-form">
@@ -73,7 +73,7 @@ class LoginForm extends React.Component {
 
 
 						<br />
-						<input type="submit" value="LOGIN" />
+						<input className="login-submit" type="submit" value="LOGIN" />
             <br/>
             <label className="form-footer">
               Don't have an account? { <Link to="/signup">Sign up</Link> }
