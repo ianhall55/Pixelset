@@ -15,9 +15,8 @@ const AlbumsReducer = function(state = {}, action){
       delete newState[albumId];
       return newState;
     case AlbumConstants.RECEIVE_ALBUM_ERRORS:
-      debugger;
       const errors = action.errors;
-      return merge({}, state, errors);
+      return merge({}, state, {errors});
     default:
       return state;
   }

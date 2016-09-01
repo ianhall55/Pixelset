@@ -6,8 +6,7 @@ export const AlbumConstants = {
   DESTROY_ALBUM: "DESTROY_ALBUM",
   RECEIVE_ALL_ALBUMS: "RECEIVE_ALL_ALBUMS",
   RECEIVE_ALBUM: "RECEIVE_ALBUM",
-  REMOVE_ALBUM: "REMOVE_ALBUM",
-  RECEIVE_ALBUM_ERRORS: "RECEIVE_ALBUM_ERRORS"
+  REMOVE_ALBUM: "REMOVE_ALBUM"
 };
 
 export const fetchAlbumsForUser = (user) => ({
@@ -48,9 +47,4 @@ export const receiveAlbum = (album) => ({
 export const removeAlbum = (album) => ({
   type: AlbumConstants.REMOVE_ALBUM,
   album
-});
-
-export const receiveAlbumErrors = errors => ({
-  type: AlbumConstants.RECEIVE_ALBUM_ERRORS,
-  errors
 });

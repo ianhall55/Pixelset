@@ -3,11 +3,13 @@ import HomeHeaderContainer from '../home_header/home_header_container.jsx';
 import Modal from 'react-modal';
 import ModalStyle from '../modal_styles';
 import CreateAlbumContainer from '../create_album/create_album_container.jsx';
+import AlbumIndexItem from '../album_index_items/album_index_item.jsx';
 
 class AlbumsIndex extends React.Component {
   constructor(props){
     super(props);
 
+    this.handleDestroy = this.handleDestroy.bind(this);
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.state= {
@@ -30,11 +32,19 @@ class AlbumsIndex extends React.Component {
     this.setState({modalOpen: true});
   }
 
+  handleDestroy(e) {
+    e.preventDefault();
+    debugger;
+    const album = e.currentTarget();
+    this.destroyAlbum(album);
+  }
+
   render() {
     const albumLines = [];
     for (let id in this.props.albums) {
       albumLines.push(
-        <li key={id}>{this.props.albums[id].title}</li>
+        <AlbumIndexItem key={id} album={this.props.albums[id]}
+          destroyAlbum={this.props.destroyAlbum} />
       );
     }
 
@@ -51,7 +61,7 @@ class AlbumsIndex extends React.Component {
             onRequestClose={this.closeModal}
             style={this.state.style}>
 
-            <CreateAlbumContainer closeModal={this.closeModal()}/>
+            <CreateAlbumContainer />
             <button onClick={this.closeModal}>Close</button>
           </Modal>
 

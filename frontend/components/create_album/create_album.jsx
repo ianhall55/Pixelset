@@ -5,6 +5,7 @@ import moment from 'moment';
 
 
 
+
 class CreateAlbumForm extends React.Component {
   constructor(props){
     super(props);
@@ -16,7 +17,7 @@ class CreateAlbumForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDateChange = this.handleDateChange.bind(this);
     this.update = this.update.bind(this);
-    this.renderErrors = this.update.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
   }
 
 
@@ -36,6 +37,10 @@ class CreateAlbumForm extends React.Component {
     this.props.addAlbum({album});
   }
 
+  componentWillUnmount(){
+    this.props.clearErrors();
+  }
+
   renderErrors() {
     return(
 			<ul>
@@ -48,6 +53,7 @@ class CreateAlbumForm extends React.Component {
 		);
 
   }
+
 
   render() {
      return(

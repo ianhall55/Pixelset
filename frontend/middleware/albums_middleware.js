@@ -1,12 +1,11 @@
 import { AlbumConstants, receiveAllAlbums, receiveAlbum,
-  removeAlbum, receiveAlbumErrors } from '../actions/albums_actions';
+  removeAlbum } from '../actions/albums_actions';
 import { fetchAlbumsForUser, addAlbum, fetchAlbum, updateAlbum, destroyAlbum } from '../util/albums_api_util';
+import { receiveCreateAlbumErrors, receiveUpdateAlbumErrors } from '../actions/forms_actions';
 
 const AlbumsMiddleware = ({getState, dispatch}) => next => action => {
-  const errorCallback = (xhr) => {
-    const errors = xhr.responseJSON;
-    dispatch(receiveAlbumErrors(errors));
-  };
+  let errorCallback;
+
   switch (action.type) {
     case AlbumConstants.FETCH_ALBUMS_FOR_USER:
       const fetchAlbumsSuccess = (data) => (dispatch(receiveAllAlbums(data)));
@@ -14,6 +13,10 @@ const AlbumsMiddleware = ({getState, dispatch}) => next => action => {
       return next(action);
     case AlbumConstants.ADD_ALBUM:
       const addAlbumSuccess = (data) => (dispatch(receiveAlbum(data)));
+      errorCallback = (xhr) => {
+        const errors = xhr.responseJSON;
+        dispatch(receiveCreateAlbumErrors(errors));
+      };
       addAlbum(action.album, addAlbumSuccess, errorCallback);
       return next(action);
     case AlbumConstants.FETCH_ALBUM:
@@ -22,6 +25,10 @@ const AlbumsMiddleware = ({getState, dispatch}) => next => action => {
       return next(action);
     case AlbumConstants.UPDATE_ALBUM:
       const updateAlbumSuccess = (data) => (dispatch(receiveAlbum(data)));
+      errorCallback = (xhr) => {
+        const errors = xhr.responseJSON;
+        dispatch(receiveUpdateAlbumErrors(errors));
+      };
       updateAlbum(action.album, updateAlbumSuccess, errorCallback);
       return next(action);
     case AlbumConstants.DESTROY_ALBUM:
