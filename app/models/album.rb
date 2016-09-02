@@ -6,5 +6,6 @@ class Album < ActiveRecord::Base
     foreign_key: :owner_id,
     class_name: :User
 
+  has_many :photo_sets
 
 end

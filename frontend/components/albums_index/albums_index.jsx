@@ -2,7 +2,8 @@ import React from 'react';
 import HomeHeaderContainer from '../home_header/home_header_container.jsx';
 import Modal from 'react-modal';
 import ModalStyle from '../modal_styles';
-import CreateAlbumContainer from '../create_album/create_album_container.jsx';
+import CreateAlbumContainer from '../create_album_form/create_album_container.jsx';
+import UpdateAlbumContainer from '../update_album_form/update_album_form_container.jsx';
 import AlbumIndexItem from '../album_index_items/album_index_item.jsx';
 
 class AlbumsIndex extends React.Component {
@@ -12,15 +13,13 @@ class AlbumsIndex extends React.Component {
     this.handleDestroy = this.handleDestroy.bind(this);
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
-    this.state= {
+    this.state = {
      modalOpen: false,
-     form: "createAlbum",
      style: ModalStyle
    };
   }
 
   componentDidMount(){
-    // e.preventDefault();
     this.props.fetchAlbumsForUser(this.props.currentUser);
   }
 
@@ -49,28 +48,32 @@ class AlbumsIndex extends React.Component {
     }
 
     return(
+
       <div className="albums-page">
         <HomeHeaderContainer />
-        <div className="albums-header" >
-          <h2>Albums</h2>
-          <button className="new-button" id="new-album"
-            onClick={this.openModal}>+ New Album</button>
+
+        <section className='album-index-section'>
+          <div className="albums-header" >
+            <h2>Albums</h2>
+            <button className="new-button" id="new-album"
+              onClick={this.openModal}>+ New Album</button>
+          </div>
+
+          <div className="albums-index-content">
+            <ul className="album-index-item">
+              {albumLines}
+            </ul>
+          </div>
 
           <Modal
             isOpen={this.state.modalOpen}
             onRequestClose={this.closeModal}
             style={this.state.style}>
 
-            <CreateAlbumContainer />
+            <CreateAlbumContainer closeModal={this.closeModal}/>
             <button onClick={this.closeModal}>Close</button>
           </Modal>
-
-        </div>
-        <div className="ablums-index-content">
-          <ul>
-            {albumLines}
-          </ul>
-        </div>
+        </section>
       </div>
     );
   }

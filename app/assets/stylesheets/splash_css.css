@@ -1,0 +1,28 @@
+
+
+.splash-body {
+  /* border: 5px solid black; */
+  width: 100%;
+  height: 805px;
+  background-image: url("http://res.cloudinary.com/de79besd8/image/upload/v1472852429/splash-image_k7zppd.jpg");
+  background-size: cover;
+  background-position: center 85%;
+  /* height: 100vh; */
+}
+
+
+.splash-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.splash-logo {
+  margin-top: 40px;
+  margin-left: 60px;
+  font-size: 30px;
+}
+
+.header-group {
+  margin-top: 40px;
+  margin-right: 60px;
+}

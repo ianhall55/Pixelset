@@ -4,6 +4,8 @@ import configureStore from './store/store.js';
 import Root from './components/root.jsx';
 import { login, logout, signup, receiveCurrentUser, receiveErrors} from './actions/session_actions';
 import { fetchAlbumsForUser, addAlbum, destroyAlbum, updateAlbum } from './actions/albums_actions';
+import { fetchPhotoSetsForAlbum, addPhotoSet, destroyPhotoSet,
+  updatePhotoSet } from './actions/photo_sets_actions';
 import Modal from 'react-modal';
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -34,10 +36,15 @@ document.addEventListener("DOMContentLoaded", () => {
 // window.signup = signup;
 // window.user1 = ({username: 'ian', password: 'password'});
 // window.receiveCurrentUser = receiveCurrentUser;
-window.receiveErrors = receiveErrors;
-window.user = {user: {username: 'ian', password: 'password'}};
-window.fetchAlbumsForUser = fetchAlbumsForUser;
-window.addAlbum = addAlbum;
-window.destroyAlbum = destroyAlbum;
-window.updateAlbum = updateAlbum;
-window.album = {album: {title: "SF", event_date: new Date("01/05/2015"), owner_id: 1}};
+// window.receiveErrors = receiveErrors;
+// window.user = {user: {username: 'ian', password: 'password'}};
+// window.fetchAlbumsForUser = fetchAlbumsForUser;
+// window.addAlbum = addAlbum;
+// window.destroyAlbum = destroyAlbum;
+// window.updateAlbum = updateAlbum;
+// window.album = {album: {title: "SF", event_date: new Date("01/05/2015"), owner_id: 1}};
+window.fetchPhotoSetsForAlbum = fetchPhotoSetsForAlbum;
+window.addPhotoSet = addPhotoSet;
+window.destroyPhotoSet = destroyPhotoSet;
+window.updatePhotoSet = updatePhotoSet;
+window.photoSet = {photo_set: {title: "Koh Lipe", album_id: 1}};

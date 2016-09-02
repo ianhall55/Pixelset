@@ -12,7 +12,10 @@ const AlbumsMiddleware = ({getState, dispatch}) => next => action => {
       fetchAlbumsForUser(action.user, fetchAlbumsSuccess, errorCallback);
       return next(action);
     case AlbumConstants.ADD_ALBUM:
-      const addAlbumSuccess = (data) => (dispatch(receiveAlbum(data)));
+      const addAlbumSuccess = (data) => {
+        dispatch(receiveAlbum(data));
+        action.success();
+      };
       errorCallback = (xhr) => {
         const errors = xhr.responseJSON;
         dispatch(receiveCreateAlbumErrors(errors));
@@ -24,7 +27,10 @@ const AlbumsMiddleware = ({getState, dispatch}) => next => action => {
       fetchAlbum(action.id, fetchAlbumSuccess, errorCallback);
       return next(action);
     case AlbumConstants.UPDATE_ALBUM:
-      const updateAlbumSuccess = (data) => (dispatch(receiveAlbum(data)));
+      const updateAlbumSuccess = (data) => {
+        dispatch(receiveAlbum(data));
+        action.success();
+      };
       errorCallback = (xhr) => {
         const errors = xhr.responseJSON;
         dispatch(receiveUpdateAlbumErrors(errors));

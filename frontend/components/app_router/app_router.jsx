@@ -5,6 +5,7 @@ import LoginFormContainer from '../login_form/login_form_container.jsx';
 import SignupFormContainer from '../signup_form/signup_form_container.jsx';
 import AlbumsIndexContainer from '../albums_index/albums_index_container.jsx';
 import SplashContainer from '../splash/splash_container.jsx';
+import AlbumViewContainer from '../album_view/album_view_main/album_view_container';
 
 
 class AppRouter extends React.Component {
@@ -36,6 +37,7 @@ class AppRouter extends React.Component {
         <Route path="/login" component={ LoginFormContainer } onEnter={this._redirectIfLoggedIn}/>
         <Route path="/signup" component={ SignupFormContainer } onEnter={this._redirectIfLoggedIn}/>
         <Route path="/home" component={ AlbumsIndexContainer } onEnter={this._ensureLoggedIn}/>
+        <Route path="/album/:albumId" component={ AlbumViewContainer } onEnter={this._ensureLoggedIn} />
       </Route>
     );
   }

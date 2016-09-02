@@ -90,18 +90,7 @@ label.form-footer {
 }
 
 
-header.home-header {
-    display: flex;
-    flex-direction: row;
-    height: 60px;
-}
 
-.home-header h2 {
-    /* padding: 10px; */
-    /* width: 60px; */
-    text-align: center;
-    margin-right: 20px;
-}
 
 h2.splash-link a {
     color: white;

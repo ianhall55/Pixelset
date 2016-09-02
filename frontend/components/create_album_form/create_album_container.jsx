@@ -11,7 +11,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  addAlbum: (album) => dispatch(addAlbum(album)),
+  addAlbum: (album, success) => dispatch(addAlbum(album, success)),
   clearErrors: () => dispatch(clearErrors())
 });
 

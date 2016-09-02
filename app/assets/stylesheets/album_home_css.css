@@ -1,0 +1,128 @@
+header.home-header {
+    display: flex;
+    flex-direction: row;
+    height: 60px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #e7e7e7;
+    background-color: rgb(250,250,250);
+    width: 100%;
+}
+
+.home-header-link {
+    /* padding: 10px; */
+    /* width: 60px; */
+    text-align: center;
+    margin-right: 60px;
+}
+
+.home-header-link {
+    color: white;
+    font-size: 30px;
+    text-decoration: none;
+}
+
+.home-header-link {
+    background: #1abc9c;
+    width: 65px;
+    text-align: center;
+}
+
+
+.home-header-link a {
+    text-decoration: none;
+    color: white;
+}
+
+section.album-index-section {
+    min-width: 800px;
+    padding: 0px 100px;
+    width: 1170px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.albums-header {
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+    margin-bottom: 60px;
+}
+
+.albums-header h2 {
+    proxima-nova,Lato,"Lucida Sans Unicode","Lucida Grande",sans-serif: inherit;
+    font-family: proxima-nova,Lato,"Lucida Sans Unicode","Lucida Grande",sans-serif;
+    font-size: 28px;
+    margin-left: 20px;
+}
+
+button#new-album {
+    margin-right: 20px;
+    background: #1abc9c;
+    color: #FFF;
+    border: 0;
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-size: 16px;
+    height: 40px;
+    padding: 6px 13px;
+}
+
+.albums-link a {
+    text-decoration: none;
+    /* height: 60px; */
+    /* width: 140px; */
+    vertical-align: center;
+    font-size: 20px;
+    display: block;
+    vertical-align: middle;
+}
+
+h2.albums-link {
+    width: 140px;
+    text-align: center;
+    vertical-align: middle;
+    height: 55px;
+}
+
+.link-selected {
+  border-bottom: 5px solid #1abc9c;
+}
+
+
+ul.album-index-item li {
+    height: 210px;
+    width: 212.5px;
+
+    padding: 0px 15px;
+    margin-bottom: 30px;
+}
+
+ul.album-index-item {
+    display: flex;
+}
+
+
+.album-item-image-holder {
+    width: 212;
+    height: 150px;
+    border: 1px solid;
+}
+
+
+navbar.home-nav h2 {
+    /* display: block; */
+    margin-right: 40px;
+}
+
+navbar.home-nav {
+    width: 600px;
+    display: flex;
+}
+
+
+.album-item-image-holder {
+    border: none;
+}

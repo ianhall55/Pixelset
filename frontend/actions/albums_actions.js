@@ -14,9 +14,10 @@ export const fetchAlbumsForUser = (user) => ({
   user
 });
 
-export const addAlbum = (album) => ({
+export const addAlbum = (album, success) => ({
   type: AlbumConstants.ADD_ALBUM,
-  album
+  album,
+  success
 });
 
 export const fetchAlbum = (id) => ({
@@ -24,9 +25,10 @@ export const fetchAlbum = (id) => ({
   id
 });
 
-export const updateAlbum = (album) => ({
+export const updateAlbum = (album, success) => ({
   type: AlbumConstants.UPDATE_ALBUM,
-  album
+  album,
+  success
 });
 
 export const destroyAlbum = (album) => ({

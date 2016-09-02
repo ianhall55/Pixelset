@@ -5,7 +5,8 @@ class Api::AlbumsController < ApplicationController
   end
 
   def show
-    render json: Album.find(params[:id])
+    @album = Album.find(params[:id])
+    render :show 
   end
 
   def create

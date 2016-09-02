@@ -4,8 +4,6 @@ import DatePicker from 'react-datepicker';
 import moment from 'moment';
 
 
-
-
 class CreateAlbumForm extends React.Component {
   constructor(props){
     super(props);
@@ -57,7 +55,7 @@ class CreateAlbumForm extends React.Component {
 
   render() {
      return(
-       <div className="login-form-container">
+       <div >
  				<form onSubmit={this.handleSubmit} className="create-form-box">
  					<label className="create-form-title">CREATE NEW ALBUM</label>
  					<br/>

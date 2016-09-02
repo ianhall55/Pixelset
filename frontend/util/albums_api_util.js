@@ -19,10 +19,10 @@ export const addAlbum = function(album, success, error) {
   });
 };
 
-export const fetchAlbum = function(album, success, error) {
+export const fetchAlbum = function(albumId, success, error) {
   $.ajax({
     method: 'GET',
-    url: `api/albums/${album.id}`,
+    url: `api/albums/${albumId}`,
     success,
     error
   });

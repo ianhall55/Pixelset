@@ -6,12 +6,14 @@ import moment from 'moment';
 
 
 
-class CreateAlbumForm extends React.Component {
+class UpdateAlbumForm extends React.Component {
   constructor(props){
     super(props);
+
     this.state = {
-      title: "",
-      event_date: new Date(),
+      id: this.props.album.id,
+      title: this.props.album.title,
+      event_date: this.props.album.event_date,
       owner_id: this.props.currentUser.id
     };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -34,7 +36,7 @@ class CreateAlbumForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const album = this.state;
-    this.props.addAlbum({album}, this.props.closeModal);
+    this.props.updateAlbum({album}, this.props.closeModal);
   }
 
   componentWillUnmount(){
@@ -56,10 +58,11 @@ class CreateAlbumForm extends React.Component {
 
 
   render() {
+  
      return(
-       <div className="login-form-container">
+       <div >
  				<form onSubmit={this.handleSubmit} className="create-form-box">
- 					<label className="create-form-title">CREATE NEW ALBUM</label>
+ 					<label className="create-form-title">EDIT ALBUM</label>
  					<br/>
  					{ this.renderErrors() }
  					<div className="create-form">
@@ -75,7 +78,7 @@ class CreateAlbumForm extends React.Component {
               onChange={this.handleDateChange} />
 
  						<br />
- 						<input type="submit" value="Create" />
+ 						<input type="submit" value="Update" />
              <br/>
 
  					</div>
@@ -86,4 +89,4 @@ class CreateAlbumForm extends React.Component {
   }
 }
 
-export default CreateAlbumForm;
+export default UpdateAlbumForm;
