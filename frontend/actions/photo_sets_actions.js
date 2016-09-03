@@ -14,9 +14,9 @@ export const fetchPhotoSetsForAlbum = (albumId) => ({
   albumId
 });
 
-export const addPhotoSet = (photoSet, success) => ({
+export const addPhotoSet = (photo_set, success) => ({
   type: PhotoSetConstants.ADD_PHOTOSET,
-  photoSet,
+  photo_set,
   success
 });
 
@@ -25,15 +25,15 @@ export const fetchPhotoSet = (id) => ({
   id
 });
 
-export const updatePhotoSet = (photoSet, success) => ({
+export const updatePhotoSet = (photo_set, success) => ({
   type: PhotoSetConstants.UPDATE_PHOTOSET,
-  photoSet,
+  photo_set,
   success
 });
 
-export const destroyPhotoSet = (photoSet) => ({
+export const destroyPhotoSet = (photo_set) => ({
   type: PhotoSetConstants.DESTROY_PHOTOSET,
-  photoSet
+  photo_set
 });
 
 export const receiveAllPhotoSets = (photoSets) => ({

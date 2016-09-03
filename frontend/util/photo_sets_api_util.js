@@ -28,7 +28,7 @@ export const addPhotoSet = function(photoSet, success, error) {
   });
 };
 
-export const updatePhotoSet = function( photoSet, success, error) {
+export const updatePhotoSet = function(photoSet, success, error) {
   $.ajax({
     method: 'PATCH',
     url: `api/albums/${photoSet.album_id}/photo_sets/${photoSet.id}`,
