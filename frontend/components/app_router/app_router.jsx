@@ -6,7 +6,7 @@ import SignupFormContainer from '../signup_form/signup_form_container.jsx';
 import AlbumsIndexContainer from '../albums_index/albums_index_container.jsx';
 import SplashContainer from '../splash/splash_container.jsx';
 import AlbumViewContainer from '../album_view/album_view_main/album_view_container';
-
+import PhotoSetViewContainer from '../album_view/photo_set_view/photo_set_view_container.jsx';
 
 class AppRouter extends React.Component {
   constructor(props){
@@ -14,6 +14,7 @@ class AppRouter extends React.Component {
     this._ensureLoggedIn = this._ensureLoggedIn.bind(this);
     this._redirectIfLoggedIn = this._redirectIfLoggedIn.bind(this);
     this._createRoutes = this._createRoutes.bind(this);
+    this.requestPhotoSet = this.requestPhotoSet.bind(this);
   }
 
   _ensureLoggedIn(nextState, replace){
@@ -30,6 +31,10 @@ class AppRouter extends React.Component {
     }
   }
 
+  requestPhotoSet(nextState){
+    this.props.fetchPhotoSet(nextState.params.albumId, nextState.params.photoSetId);
+  }
+
   _createRoutes() {
     return (
       <Route path="/" component={ App }>
@@ -37,7 +42,10 @@ class AppRouter extends React.Component {
         <Route path="/login" component={ LoginFormContainer } onEnter={this._redirectIfLoggedIn}/>
         <Route path="/signup" component={ SignupFormContainer } onEnter={this._redirectIfLoggedIn}/>
         <Route path="/home" component={ AlbumsIndexContainer } onEnter={this._ensureLoggedIn}/>
-        <Route path="/album/:albumId" component={ AlbumViewContainer } onEnter={this._ensureLoggedIn} />
+        <Route path="/album/:albumId" component={ AlbumViewContainer } onEnter={this._ensureLoggedIn} >
+          <Route path="photo_set/:photoSetId" component={ PhotoSetViewContainer}
+              onEnter={this.requestPhotoSet} />
+        </Route>
       </Route>
     );
   }

@@ -5,6 +5,7 @@ import ModalStyle from '../modal_styles';
 import CreateAlbumContainer from '../create_album_form/create_album_container.jsx';
 import UpdateAlbumContainer from '../update_album_form/update_album_form_container.jsx';
 import AlbumIndexItem from '../album_index_items/album_index_item.jsx';
+import { withRouter } from 'react-router';
 
 class AlbumsIndex extends React.Component {
   constructor(props){
@@ -79,4 +80,4 @@ class AlbumsIndex extends React.Component {
   }
 }
 
-export default AlbumsIndex;
+export default withRouter(AlbumsIndex);

@@ -2,9 +2,9 @@ import React from 'react';
 import Modal from 'react-modal';
 import ModalStyle from '../modal_styles';
 import UpdateAlbumContainer from '../update_album_form/update_album_form_container.jsx';
-import { Link } from 'react-router';
+import { Link, withRouter } from 'react-router';
 
-export default class AlbumIndexItem extends React.Component {
+class AlbumIndexItem extends React.Component {
   constructor(props) {
     super(props);
     this.handleDestroy = this.handleDestroy.bind(this);
@@ -30,8 +30,6 @@ export default class AlbumIndexItem extends React.Component {
   }
 
   render () {
-
-
     return (
       <li>
 
@@ -58,3 +56,5 @@ export default class AlbumIndexItem extends React.Component {
     );
   }
 }
+
+export default withRouter(AlbumIndexItem);

@@ -39,4 +39,4 @@ ord         | integer   | not null
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-photo       | bytea     | not null
+image_url   | string    | not null

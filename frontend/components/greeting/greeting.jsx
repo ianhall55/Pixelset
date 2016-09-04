@@ -21,6 +21,7 @@ class Greeting extends React.Component{
   }
 
   render() {
+    
     if (this.props.currentUser) {
       return(
         <hgroup className="header-group">

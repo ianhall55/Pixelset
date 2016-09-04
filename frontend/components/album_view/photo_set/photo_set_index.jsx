@@ -1,16 +1,14 @@
 import React from 'react';
 import Modal from 'react-modal';
 import ModalStyle from '../../modal_styles';
-// import CreatePhotoSetContainer from '../create_album_form/create_album_container.jsx';
-// import UpdatePhotoSetContainer from '../update_album_form/update_album_form_container.jsx';
+import CreatePhotoSetContainer from './create_photo_set_form/create_photo_set_container.jsx';
 import PhotoSetIndexItem from './photo_set_index_item';
 
 
-class AlbumsIndex extends React.Component {
+class PhotoSetsIndex extends React.Component {
   constructor(props){
     super(props);
 
-    this.handleDestroy = this.handleDestroy.bind(this);
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.state = {
@@ -31,16 +29,14 @@ class AlbumsIndex extends React.Component {
     this.setState({modalOpen: true});
   }
 
-  handleDestroy(e) {
-
-  }
 
   render() {
     const photoSetLines = [];
     for (let id in this.props.photoSets) {
       photoSetLines.push(
-        <PhotoSetIndexItem key={id} photoSet={this.props.photoSets[id]}
-          destroyPhotoSet={this.props.destroyPhotoSet} />
+        <PhotoSetIndexItem key={id}
+          photoSet={this.props.photoSets[id]} destroyPhotoSet={this.props.destroyPhotoSet}
+          album={this.props.album}/>
       );
     }
 
@@ -60,7 +56,7 @@ class AlbumsIndex extends React.Component {
           onRequestClose={this.closeModal}
           style={this.state.style}>
 
-
+          <CreatePhotoSetContainer album={this.props.album} closeModal={this.closeModal} />
           <button onClick={this.closeModal}>Close</button>
         </Modal>
       </section>
@@ -69,4 +65,4 @@ class AlbumsIndex extends React.Component {
   }
 }
 
-export default AlbumsIndex;
+export default PhotoSetsIndex;

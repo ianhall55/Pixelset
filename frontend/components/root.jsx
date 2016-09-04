@@ -4,8 +4,8 @@ import { Provider } from 'react-redux';
 
 
 const Root = ({store}) => (
-  <Provider store={store}>
-    <AppRouterContainer/>
+  <Provider store={store} className="root-router" >
+    <AppRouterContainer className="root-router" />
   </Provider>
 );
 

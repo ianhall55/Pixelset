@@ -4,18 +4,14 @@ import DatePicker from 'react-datepicker';
 import moment from 'moment';
 
 
-
-
 class CreateAlbumForm extends React.Component {
   constructor(props){
     super(props);
     this.state = {
       title: "",
-      event_date: new Date(),
-      owner_id: this.props.currentUser.id
+      album_id: this.props.album.id
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleDateChange = this.handleDateChange.bind(this);
     this.update = this.update.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
   }
@@ -25,16 +21,10 @@ class CreateAlbumForm extends React.Component {
     return e => { this.setState({[fieldName]: e.currentTarget.value }); };
   }
 
-  handleDateChange(date) {
-    this.setState({
-      event_date: date.toDate()
-    });
-  }
-
   handleSubmit(e) {
     e.preventDefault();
-    const album = this.state;
-    this.props.addAlbum({album}, this.props.closeModal);
+    const photo_set = this.state;
+    this.props.addPhotoSet({photo_set}, this.props.closeModal);
   }
 
   componentWillUnmount(){
@@ -57,30 +47,26 @@ class CreateAlbumForm extends React.Component {
 
   render() {
      return(
-       <div className="login-form-container">
+       <div >
  				<form onSubmit={this.handleSubmit} className="create-form-box">
- 					<label className="create-form-title">CREATE NEW ALBUM</label>
+ 					<label className="create-form-title">ADD PHOTO SET</label>
  					<br/>
  					{ this.renderErrors() }
  					<div className="create-form">
  						<br />
- 						<label> Title:</label>
+ 						<label> Name:</label>
  							<input type="text"
  								value={this.state.title}
  								onChange={this.update("title")}
  								className="create-input" />
  						<br />
- 						<label> Event Date: </label>
-            <DatePicker className="create-input" selected={moment(this.state.event_date)}
-              onChange={this.handleDateChange} />
-
- 						<br />
- 						<input type="submit" value="Create" />
+ 						<input type="submit" value="CREATE" />
              <br/>
 
  					</div>
  				</form>
  			</div>
+
 
     );
   }

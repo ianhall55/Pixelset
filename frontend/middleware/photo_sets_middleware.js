@@ -1,12 +1,13 @@
-import { PhotoSetConstants, receiveAllPhotoSets, receivePhotoSet,
-  removePhotoSet } from '../actions/photo_sets_actions';
+import { PhotoSetConstants, receiveAllPhotoSets, receiveNewPhotoSet, receiveSinglePhotoSet,
+  removePhotoSet, removePhotoSetDetail } from '../actions/photo_sets_actions';
 import { fetchPhotoSetsForAlbum, addPhotoSet, fetchPhotoSet,
   updatePhotoSet, destroyPhotoSet } from '../util/photo_sets_api_util';
 import { receiveCreatePhotoSetErrors, receiveUpdatePhotoSetErrors } from '../actions/forms_actions';
+import { withRouter, hashHistory } from 'react-router';
 
 const PhotoSetsMiddleware = ({getState, dispatch}) => next => action => {
   let errorCallback;
-
+  let photoSet;
   switch (action.type) {
     case PhotoSetConstants.FETCH_PHOTOSETS_FOR_ALBUM:
       const fetchPhotoSetsSuccess = (data) => (dispatch(receiveAllPhotoSets(data)));
@@ -14,7 +15,10 @@ const PhotoSetsMiddleware = ({getState, dispatch}) => next => action => {
       return next(action);
     case PhotoSetConstants.ADD_PHOTOSET:
       const addPhotoSetSuccess = (data) => {
-        dispatch(receivePhotoSet(data));
+        dispatch(receiveNewPhotoSet(data));
+        photoSet = data[Object.keys(data)[0]];
+        dispatch(receiveSinglePhotoSet(data[photoSet.id]));
+        hashHistory.push(`/album/${photoSet.album_id}/photo_set/${photoSet.id}`);
         action.success();
       };
       errorCallback = (xhr) => {
@@ -24,13 +28,15 @@ const PhotoSetsMiddleware = ({getState, dispatch}) => next => action => {
       addPhotoSet(action.photo_set, addPhotoSetSuccess, errorCallback);
       return next(action);
     case PhotoSetConstants.FETCH_PHOTOSET:
-      const fetchPhotoSetSuccess = (data) => (dispatch(receivePhotoSet(data)));
-      fetchPhotoSet(action.albumId, fetchPhotoSetSuccess, errorCallback);
+      const fetchPhotoSetSuccess = (data) => (dispatch(receiveSinglePhotoSet(data)));
+      fetchPhotoSet(action.albumId, action.photoSetId, fetchPhotoSetSuccess, errorCallback);
       return next(action);
     case PhotoSetConstants.UPDATE_PHOTOSET:
-    debugger;
       const updatePhotoSetSuccess = (data) => {
-        dispatch(receivePhotoSet(data));
+        dispatch(receiveNewPhotoSet(data));
+        photoSet = data[Object.keys(data)[0]];
+        dispatch(receiveSinglePhotoSet(data[photoSet.id]));
+        hashHistory.push(`/album/${photoSet.album_id}/photo_set/${photoSet.id}`);
         action.success();
       };
       errorCallback = (xhr) => {
@@ -40,7 +46,11 @@ const PhotoSetsMiddleware = ({getState, dispatch}) => next => action => {
       updatePhotoSet(action.photo_set, updatePhotoSetSuccess, errorCallback);
       return next(action);
     case PhotoSetConstants.DESTROY_PHOTOSET:
-      const destroyPhotoSetSuccess = (data) => (dispatch(removePhotoSet(data)));
+      const destroyPhotoSetSuccess = (data) => {
+        dispatch(removePhotoSet(data));
+        hashHistory.push(`/album/${data.album_id}`);
+        dispatch(removePhotoSetDetail());
+      };
       destroyPhotoSet(action.photo_set, destroyPhotoSetSuccess, errorCallback);
       return next(action);
     default:

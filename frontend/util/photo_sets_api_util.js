@@ -21,7 +21,7 @@ export const fetchPhotoSet = function(albumId, photoSetId, success, error) {
 export const addPhotoSet = function(photoSet, success, error) {
   $.ajax({
     method: 'POST',
-    url: `api/albums/${photoSet.album_id}/photo_sets`,
+    url: `api/albums/${photoSet.photo_set.album_id}/photo_sets`,
     data: photoSet,
     success,
     error
@@ -31,7 +31,7 @@ export const addPhotoSet = function(photoSet, success, error) {
 export const updatePhotoSet = function(photoSet, success, error) {
   $.ajax({
     method: 'PATCH',
-    url: `api/albums/${photoSet.album_id}/photo_sets/${photoSet.id}`,
+    url: `api/albums/${photoSet.photo_set.album_id}/photo_sets/${photoSet.photo_set.id}`,
     data: photoSet,
     success,
     error

@@ -5,8 +5,10 @@ export const PhotoSetConstants = {
   UPDATE_PHOTOSET: "UPDATE_PHOTOSET",
   DESTROY_PHOTOSET: "DESTROY_PHOTOSET",
   RECEIVE_ALL_PHOTOSETS: "RECEIVE_ALL_PHOTOSETS",
-  RECEIVE_PHOTOSET: "RECEIVE_PHOTOSET",
-  REMOVE_PHOTOSET: "REMOVE_PHOTOSET"
+  RECEIVE_SINGLE_PHOTOSET: "RECEIVE_SINGLE_PHOTOSET",
+  RECEIVE_NEW_PHOTOSET: "RECEIVE_NEW_PHOTOSET",
+  REMOVE_PHOTOSET: "REMOVE_PHOTOSET",
+  REMOVE_PHOTOSET_DETAIL: "REMOVE_PHOTOSET_DETAIL"
 };
 
 export const fetchPhotoSetsForAlbum = (albumId) => ({
@@ -20,9 +22,10 @@ export const addPhotoSet = (photo_set, success) => ({
   success
 });
 
-export const fetchPhotoSet = (id) => ({
+export const fetchPhotoSet = (albumId, photoSetId) => ({
   type: PhotoSetConstants.FETCH_PHOTOSET,
-  id
+  albumId,
+  photoSetId
 });
 
 export const updatePhotoSet = (photo_set, success) => ({
@@ -41,12 +44,21 @@ export const receiveAllPhotoSets = (photoSets) => ({
   photoSets
 });
 
-export const receivePhotoSet = (photoSet) => ({
-  type: PhotoSetConstants.RECEIVE_PHOTOSET,
+export const receiveSinglePhotoSet = (photoSet) => ({
+  type: PhotoSetConstants.RECEIVE_SINGLE_PHOTOSET,
+  photoSet
+});
+
+export const receiveNewPhotoSet = (photoSet) => ({
+  type: PhotoSetConstants.RECEIVE_NEW_PHOTOSET,
   photoSet
 });
 
 export const removePhotoSet = (photoSet) => ({
   type: PhotoSetConstants.REMOVE_PHOTOSET,
   photoSet
+});
+
+export const removePhotoSetDetail = () => ({
+  type: PhotoSetConstants.REMOVE_PHOTOSET_DETAIL
 });

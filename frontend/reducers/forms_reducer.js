@@ -5,7 +5,9 @@ const _defaultState = {
   login: {errors: []},
   signup: {errors: []},
   createAlbum: {errors: []},
-  updateAlbum: {errors: []}
+  updateAlbum: {errors: []},
+  createPhotoSet: {errors: []},
+  updatePhotoSet: {errors: []}
 };
 
 const FormsReducer = function(state = _defaultState, action){
@@ -31,7 +33,17 @@ const FormsReducer = function(state = _defaultState, action){
     case FormConstants.UPDATE_ALBUM_ERRORS:
       errors = action.errors;
       newState = merge({}, state);
-      newState.signin.errors = errors;
+      newState.updateAlbum.errors = errors;
+      return newState;
+    case FormConstants.CREATE_PHOTOSET_ERRORS:
+      errors = action.errors;
+      newState = merge({}, state);
+      newState.createPhotoSet.errors = errors;
+      return newState;
+    case FormConstants.UPDATE_PHOTOSET_ERRORS:
+      errors = action.errors;
+      newState = merge({}, state);
+      newState.updatePhotoSet.errors = errors;
       return newState;
     case FormConstants.CLEAR_ERRORS:
       return _defaultState;

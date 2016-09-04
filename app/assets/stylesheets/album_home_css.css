@@ -2,7 +2,7 @@ header.home-header {
     display: flex;
     flex-direction: row;
     height: 60px;
-    margin-bottom: 40px;
+    /* margin-bottom: 40px; */
     border-bottom: 1px solid #e7e7e7;
     background-color: rgb(250,250,250);
     width: 100%;
@@ -34,11 +34,12 @@ header.home-header {
 }
 
 section.album-index-section {
-    min-width: 800px;
+    /* min-width: 800px; */
     padding: 0px 100px;
-    width: 1170px;
+    /* width: 1170px; */
     margin-left: auto;
     margin-right: auto;
+    margin-top: 20px;
 }
 
 .albums-header {
@@ -95,13 +96,12 @@ h2.albums-link {
 ul.album-index-item li {
     height: 210px;
     width: 212.5px;
-
     padding: 0px 15px;
     margin-bottom: 30px;
 }
 
 ul.album-index-item {
-    display: flex;
+    /* display: flex; */
 }
 
 
@@ -125,4 +125,64 @@ navbar.home-nav {
 
 .album-item-image-holder {
     border: none;
+}
+
+
+ul.album-index-item {
+    width: 100%;
+    /* height: auto; */
+}
+
+.albums-index-content {
+    width: 100%;
+    display: flex;
+    height: auto;
+    min-height: 600px;
+}
+
+.album_index_item li {
+    display: flex;
+}
+
+.album-index-item li {
+    display: inline-block;
+}
+
+ul.album-index-item {
+    /* display: flex; */
+    /* flex-direction: row; */
+    /* justify-content: flex-start; */
+    /* flex-wrap: wrap; */
+}
+
+
+.album-view-sidebar {
+    padding: 40px 10px;
+    width: 250px;
+    height: 100%;
+    display: block;
+    float: left;
+}
+
+.photo-set-view {
+    display: block;
+    float: left;
+}
+
+html, body {
+    height: 100%;
+}
+
+main#root {
+    height: 100%;
+}
+
+div {}
+
+.album-view-page {
+    height: 100%;
+}
+
+#root div {
+    /* height: 100%; */
 }

@@ -1,12 +1,13 @@
 import React from 'react';
 import Modal from 'react-modal';
 import ModalStyle from '../../modal_styles';
-import UpdatePhotoSetContainer from './photo_set_update_form/photo_set_update_form_container.jsx';
+import UpdatePhotoSetContainer from './update_photo_set_form/update_photo_set_form_container.jsx';
+import { Link } from 'react-router';
 
-
-export default class PhotoSetIndexItem extends React.Component {
+class PhotoSetIndexItem extends React.Component {
   constructor(props) {
     super(props);
+
     this.handleDestroy = this.handleDestroy.bind(this);
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
@@ -18,7 +19,7 @@ export default class PhotoSetIndexItem extends React.Component {
 
   handleDestroy(e) {
     e.preventDefault();
-    this.props.destroyAlbum(this.props.album);
+    this.props.destroyPhotoSet(this.props.photoSet);
   }
 
   closeModal(){
@@ -29,17 +30,16 @@ export default class PhotoSetIndexItem extends React.Component {
     this.setState({modalOpen: true});
   }
 
-  componentDidMount(){
 
-  }
 
   render () {
 
-
     return (
-      <li>
+      <li >
         <div className="photo-set-item-options">
-          <h3>{this.props.photoSet.title}</h3>
+          { <Link to={`/album/${this.props.album.id}/photo_set/${this.props.photoSet.id}`} >
+              <h3>{this.props.photoSet.title}</h3>
+            </Link> }
           {<button onClick={this.openModal}>Edit</button>}
           {<button onClick={this.handleDestroy}>Delete</button>}
         </div>
@@ -55,3 +55,5 @@ export default class PhotoSetIndexItem extends React.Component {
     );
   }
 }
+
+export default PhotoSetIndexItem;
