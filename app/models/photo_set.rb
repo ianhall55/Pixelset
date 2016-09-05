@@ -3,5 +3,6 @@ class PhotoSet < ActiveRecord::Base
 
   belongs_to :album
 
+  has_many :photos
 
 end

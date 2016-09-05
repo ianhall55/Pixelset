@@ -4,7 +4,9 @@ Rails.application.routes.draw do
     resource :user, only: [:create]
     resource :session, only: [:create, :destroy, :show]
     resources :albums do
-      resources :photo_sets
+      resources :photo_sets do
+        resources :photos
+      end
     end
   end
 

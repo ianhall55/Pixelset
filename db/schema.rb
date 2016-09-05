@@ -11,17 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160904230640) do
+ActiveRecord::Schema.define(version: 20160905211214) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "albums", force: :cascade do |t|
-    t.string   "title",      null: false
-    t.integer  "owner_id",   null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "title",          null: false
+    t.integer  "owner_id",       null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.date     "event_date"
+    t.integer  "cover_photo_id"
   end
 
   create_table "photo_sets", force: :cascade do |t|
@@ -32,16 +33,14 @@ ActiveRecord::Schema.define(version: 20160904230640) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "photo_sets_photos", force: :cascade do |t|
-    t.integer "photo_id",     null: false
-    t.integer "photo_set_id", null: false
-    t.integer "ord",          null: false
-  end
-
   create_table "photos", force: :cascade do |t|
-    t.string   "image_url",  null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "image_url",     null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "photo_set_id"
+    t.integer  "ord"
+    t.string   "public_id"
+    t.string   "thumbnail_url"
   end
 
   create_table "users", force: :cascade do |t|

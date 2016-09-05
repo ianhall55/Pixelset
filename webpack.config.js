@@ -7,6 +7,9 @@ module.exports = {
     path: path.join(__dirname, 'app', 'assets', 'javascripts'),
     filename: "bundle.js"
   },
+  node: {
+    fs: "empty"
+  },
   module: {
     loaders: [
       {

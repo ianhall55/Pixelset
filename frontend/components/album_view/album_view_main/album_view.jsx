@@ -21,7 +21,7 @@ class AlbumView extends React.Component {
 
 
   render() {
-    
+
     const album = this.props.albums[this.state.albumId];
     if (album) {
       return(
@@ -29,6 +29,7 @@ class AlbumView extends React.Component {
           <HomeHeaderContainer album={album} />
           <AlbumViewSidebar album={album} />
           {this.props.children}
+
         </div>
       );
     } else {

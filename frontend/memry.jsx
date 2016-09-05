@@ -6,6 +6,7 @@ import { login, logout, signup, receiveCurrentUser, receiveErrors} from './actio
 import { fetchAlbumsForUser, addAlbum, destroyAlbum, updateAlbum } from './actions/albums_actions';
 import { fetchPhotoSetsForAlbum, addPhotoSet, destroyPhotoSet,
   updatePhotoSet } from './actions/photo_sets_actions';
+import { addPhoto } from './actions/photos_actions';
 import Modal from 'react-modal';
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -48,3 +49,6 @@ window.addPhotoSet = addPhotoSet;
 window.destroyPhotoSet = destroyPhotoSet;
 window.updatePhotoSet = updatePhotoSet;
 window.photoSet = {photo_set: {title: "Koh Lipe", album_id: 1}};
+window.photo = {photo: {image_url: "http://res.cloudinary.com/de79besd8/image/upload/v1473032728/IMG_0931-2_ojeggc.jpg",
+    photo_set_id: 1, ord: 1}}
+window.addPhoto = addPhoto;

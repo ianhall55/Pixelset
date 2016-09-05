@@ -159,7 +159,7 @@ ul.album-index-item {
 .album-view-sidebar {
     padding: 40px 10px;
     width: 250px;
-    height: 100%;
+    height: 900px;
     display: block;
     float: left;
 }
@@ -185,4 +185,13 @@ div {}
 
 #root div {
     /* height: 100%; */
+}
+
+
+.photo-index-item li {
+    display: inline-block;
+    padding: 10px;
+    border: 1px solid lightgrey;
+    margin-right: 10px;
+    margin-bottom: 10px;
 }
