@@ -3,6 +3,7 @@ import Modal from 'react-modal';
 import ModalStyle from '../modal_styles';
 import UpdateAlbumContainer from '../update_album_form/update_album_form_container.jsx';
 import { Link, withRouter } from 'react-router';
+import { url } from 'cloudinary';
 
 class AlbumIndexItem extends React.Component {
   constructor(props) {
@@ -35,7 +36,11 @@ class AlbumIndexItem extends React.Component {
 
           { <Link to={`/album/${this.props.album.id}`}>
             <div className="album-item-image-holder">
-              <img src="http://res.cloudinary.com/de79besd8/image/upload/w_210,h_151/sample.jpg"/>
+              <img src={url(this.props.album.cover_photo.public_id + ".jpg", {
+                width: 210, height: 151, crop: 'fill',
+                cloud_name: window.cloudinary_options['cloud_name']
+              })} />
+
             </div>
           </Link> }
 

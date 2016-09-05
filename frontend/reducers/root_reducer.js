@@ -6,6 +6,7 @@ import PhotoSetsReducer from './photo_sets_reducer';
 import PhotoSetDetailReducer from './photo_set_detail_reducer';
 import PhotosReducer from './photos_reducer';
 
+
 const RootReducer = combineReducers({
   session: SessionReducer,
   albums: AlbumsReducer,

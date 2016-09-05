@@ -23,8 +23,9 @@ export const addPhoto = (albumId, photo, success) => ({
   success
 });
 
-export const fetchPhoto = (photoSetId, photoId) => ({
+export const fetchPhoto = (albumId, photoSetId, photoId) => ({
   type: PhotoConstants.FETCH_PHOTO,
+  albumId,
   photoSetId,
   photoId
 });

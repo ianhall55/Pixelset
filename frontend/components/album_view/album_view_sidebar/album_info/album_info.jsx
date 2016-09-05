@@ -2,7 +2,7 @@ import React from 'react';
 import Modal from 'react-modal';
 import ModalStyle from '../../../modal_styles';
 import UpdateAlbumContainer from '../../../update_album_form/update_album_form_container.jsx';
-
+import { url } from 'cloudinary';
 
 class AlbumInfo extends React.Component {
   constructor(props){
@@ -37,6 +37,14 @@ class AlbumInfo extends React.Component {
       <div className="album-info">
         {this.props.album.title}
         {<button onClick={this.openModal}>Edit</button>}
+        <div className="album-info-image-holder">
+          <img src={url(this.props.album.cover_photo.public_id + ".jpg", {
+            width: 210, height: 151, crop: 'fill',
+            cloud_name: window.cloudinary_options['cloud_name']
+          })} />
+        </div>
+
+
         <Modal
           isOpen={this.state.modalOpen}
           onRequestClose={this.closeModal}

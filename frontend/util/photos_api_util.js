@@ -7,15 +7,15 @@ export const fetchPhotosForPhotoSet = function(photoSet, success) {
   });
 };
 
-// export const fetchPhoto = function(photoSet, photoId, success, error) {
-//   $.ajax({
-//     method: 'GET',
-//     url: `api/albums/${photoSet.album_id}/photo_sets/${photoSet.id}/photos/${photoId}`,
-//     success,
-//     error
-//   });
-// };
-//
+export const fetchPhoto = function(photoId, success, error) {
+  $.ajax({
+    method: 'GET',
+    url: `api/albums/1/photo_sets/1/photos/${photoId}`,
+    success,
+    error
+  });
+};
+
 
 export const addPhoto = function(albumId, photoSetId, photo, success, error) {
   $.ajax({

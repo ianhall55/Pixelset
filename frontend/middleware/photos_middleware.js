@@ -1,5 +1,6 @@
-import { PhotoConstants, receiveAllPhotos, receiveNewPhoto } from '../actions/photos_actions';
-import { fetchPhotosForPhotoSet, addPhoto } from '../util/photos_api_util';
+import { PhotoConstants, receiveAllPhotos, receiveNewPhoto,
+  receiveCoverPhoto } from '../actions/photos_actions';
+import { fetchPhotosForPhotoSet, addPhoto, fetchPhoto } from '../util/photos_api_util';
 // import { receiveCreatePhotoErrors, receiveUpdatePhotoErrors } from '../actions/forms_actions';
 import { withRouter, hashHistory } from 'react-router';
 
@@ -22,10 +23,10 @@ const PhotosMiddleware = ({getState, dispatch}) => next => action => {
       addPhoto(action.albumId, action.photo.photo.photo_set_id,
           action.photo, addPhotoSuccess, errorCallback);
       return next(action);
-    // case PhotoConstants.FETCH_PHOTOSET:
-    //   const fetchPhotoSuccess = (data) => (dispatch(receiveSinglePhoto(data)));
-    //   fetchPhoto(action.albumId, action.photoId, fetchPhotoSuccess, errorCallback);
-    //   return next(action);
+    case PhotoConstants.FETCH_PHOTO:
+      const fetchPhotoSuccess = (data) => (dispatch(receiveCoverPhoto(data)));
+      fetchPhoto(action.photoId, fetchPhotoSuccess, errorCallback);
+      return next(action);
     // case PhotoConstants.UPDATE_PHOTOSET:
     //   const updatePhotoSuccess = (data) => {
     //     dispatch(receiveNewPhoto(data));

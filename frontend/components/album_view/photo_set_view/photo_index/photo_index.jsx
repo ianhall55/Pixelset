@@ -1,6 +1,5 @@
 import React from 'react';
-import Modal from 'react-modal';
-import ModalStyle from '../../../modal_styles';
+import PhotoIndexItem from './photo_index_item';
 import { url } from 'cloudinary';
 // import CreatePhotoSetContainer from './create_photo_set_form/create_photo_set_container.jsx';
 
@@ -13,10 +12,7 @@ class PhotosIndex extends React.Component {
     this.upload = this.upload.bind(this);
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
-    this.state = {
-     modalOpen: false,
-     style: ModalStyle
-   };
+
   }
 
   componentWillReceiveProps(){
@@ -41,7 +37,6 @@ class PhotosIndex extends React.Component {
       window.cloudinary_options,
       function(error, images) {
         if (error === null) {
-          debugger;
           const photo = {photo: {image_url: images[0].url,
             public_id: images[0].public_id,
             thumbnail_url: images[0].thumbnail_url,
@@ -61,12 +56,7 @@ class PhotosIndex extends React.Component {
     const photoLines = [];
     for (let id in this.props.photos) {
       photoLines.push(
-        <li key={id}>
-          <img src={url(this.props.photos[id].public_id + ".jpg", {
-            width: 100, height: 100, cloud_name: cloud_name
-          })} />
-
-        </li>
+        <PhotoIndexItem key={id} photo={this.props.photos[id]} />
       );
     }
 
@@ -83,14 +73,6 @@ class PhotosIndex extends React.Component {
           </ul>
         </div>
 
-        <Modal
-          isOpen={this.state.modalOpen}
-          onRequestClose={this.closeModal}
-          style={this.state.style}>
-
-
-          <button onClick={this.closeModal}>Close</button>
-        </Modal>
       </section>
 
     );

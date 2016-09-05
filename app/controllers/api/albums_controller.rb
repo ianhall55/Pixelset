@@ -6,7 +6,8 @@ class Api::AlbumsController < ApplicationController
 
   def show
     @album = Album.find(params[:id])
-    render :show 
+    
+    render :show
   end
 
   def create
@@ -31,6 +32,6 @@ class Api::AlbumsController < ApplicationController
   end
 
   def album_params
-    params.require(:album).permit(:id, :title, :event_date, :owner_id)
+    params.require(:album).permit(:id, :title, :event_date, :owner_id, :cover_photo_id)
   end
 end
