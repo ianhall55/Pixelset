@@ -1,6 +1,6 @@
 import React from 'react';
 import GreetingContainer from '../greeting/greeting_container';
-
+import { Link } from 'react-router';
 
 const Splash = ({children}) => (
 
@@ -10,7 +10,13 @@ const Splash = ({children}) => (
           <h1 className='splash-logo'>M E M R Y S</h1>
           <GreetingContainer/>
         </header>
-        
+        <div className="splash-content">
+          <h2 className="splash-main-message">STYLISH PHOTO COLLECTIONS</h2>
+          <h3 className="splash-sub-message">The new way to share your photos</h3>
+          {<Link to="/signup" >
+            <button className="splash-main-button">GET STARTED</button>
+           </Link>}
+        </div>
         {children}
       </section>
 

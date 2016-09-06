@@ -32,3 +32,54 @@
   margin-right: 60px;
   margin-top: 40px;
 }
+
+
+.login-signup a {
+    padding: 6px 18px;
+    border: 1px solid #000;
+    display: inline-block;
+    min-width: 60px;
+    text-align: center;
+    color: #333;
+    /* margin-left: 30px; */
+    text-decoration: none;
+    font-weight: 400;
+    font-family: sans-serif;
+    font-size: 13px;
+}
+
+
+.splash-content {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 700px;
+    text-align: center;
+    margin-top: 50px;
+    font-family: sans-serif;
+}
+
+h2.splash-main-message {
+    color: #111;
+    font-size: 34px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+h3.splash-sub-message {
+    font-family: adobe-garamond-pro,Garamond,Georgia,serif;
+    font-size: 1.2em;
+}
+
+button.splash-main-button {
+    background: #1abc9c;
+    padding: 10px 50px;
+    margin: 15px 0 7px;
+    color: #FFF;
+    letter-spacing: 1px;
+    font-weight: 400;
+    border: 0;
+    text-decoration: none;
+    font-size: 14px;
+}

@@ -21,21 +21,20 @@ class Greeting extends React.Component{
   }
 
   render() {
-    
+
     if (this.props.currentUser) {
       return(
-        <hgroup className="header-group">
-          <h2 className="header-name">Hi, {this.props.currentUser.username}!</h2>
+        <hgroup className="header-group login-signup">
           <button className="header-button" onClick={this.props.logout}>Log Out</button>
-          <button className="header-button" onClick={this.goToDashboard}>OPEN DASHBOARD</button>
+          <Link to="/login" >OPEN DASHBOARD</Link>
         </hgroup>
       );
     } else {
       return(
         <nav className="login-signup">
-          <Link to="/login" >Login</Link>
-              &nbsp;or&nbsp;
-          <Link to="/signup" >Sign up!</Link>
+          <Link to="/login" >LOGIN</Link>
+
+          <Link to="/signup" >SIGN UP</Link>
         </nav>
       );
     }

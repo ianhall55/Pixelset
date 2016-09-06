@@ -33,6 +33,7 @@ class AppRouter extends React.Component {
 
   requestPhotos(nextState){
     this.props.fetchPhotosForPhotoSet(nextState.params.albumId, nextState.params.photoSetId);
+    this.props.fetchPhotoSet(nextState.params.albumId, nextState.params.photoSetId);
   }
 
   _createRoutes() {
