@@ -10,7 +10,8 @@ class Api::PhotoSetsController < ApplicationController
 
   def create
     @photo_set = PhotoSet.new(photo_set_params)
-    @photo_set.ord = PhotoSet.where(album_id: 1).order(:ord).last.ord + 1
+    last_photo_set = PhotoSet.where(album_id: @photo_set.album_id).order(:ord).last
+    @photo_set.ord = (last_photo_set) ? last_photo_set.ord + 1 : 1
     if @photo_set.save
       render :show
     else
