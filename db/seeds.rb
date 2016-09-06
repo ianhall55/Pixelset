@@ -61,10 +61,11 @@ Photo.create!({image_url: 'http://res.cloudinary.com/de79besd8/image/upload/v147
   photo_set_id: p2.id, public_id: 'seed/ocean/o21', thumbnail_url: 'http://res.cloudinary.com/de79besd8/image/upload/c_limit,h_60,w_90/v1473179931/seed/ocean/o21.jpg'})
 
 
+a1 = Album.where(id: 1).first
 a1.cover_photo_id = cp1.id
 
 a1.save
-a2.save
+
 
 # u1 = User.create!({name: 'guest', email: 'guest@gmail.com', username: 'guest', password: 'password'})
 #
