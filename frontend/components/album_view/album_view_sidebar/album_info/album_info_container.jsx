@@ -1,10 +1,10 @@
 import {connect} from 'react-redux';
 import React from 'react';
-import AlbumInfo from './album_Info.jsx';
+import AlbumInfo from './album_info.jsx';
 import { updateAlbum } from '../../../../actions/albums_actions';
 
 const mapStateToProps = state => ({
-  
+
 });
 
 const mapDispatchToProps = dispatch => ({
