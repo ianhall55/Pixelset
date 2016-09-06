@@ -16,11 +16,10 @@ class PhotosIndex extends React.Component {
   }
 
   componentWillReceiveProps(){
-    this.props.fetchPhotosForPhotoSet(this.props.photoSet);
-  }
-
-  componentDidMount(){
-    this.props.fetchPhotosForPhotoSet(this.props.photoSet);
+    debugger;
+    if (this.props.photoSet.id) {
+      this.props.fetchPhotosForPhotoSet(this.props.photoSet);
+    }
   }
 
   closeModal(){

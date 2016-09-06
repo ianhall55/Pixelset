@@ -4,8 +4,8 @@ import PhotosIndex from './photo_index.jsx';
 import { fetchPhotosForPhotoSet, addPhoto } from '../../../../actions/photos_actions';
 
 const mapStateToProps = state => ({
-  photos: state.photos
-
+  photos: state.photos,
+  photoSet: state.photoSetDetail
 });
 
 const mapDispatchToProps = dispatch => ({
