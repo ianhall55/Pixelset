@@ -11,9 +11,10 @@ export const PhotoConstants = {
   REMOVE_PHOTO_DETAIL: "REMOVE_PHOTO_DETAIL"
 };
 
-export const fetchPhotosForPhotoSet = (photoSet) => ({
+export const fetchPhotosForPhotoSet = (albumId, photoSetId) => ({
   type: PhotoConstants.FETCH_PHOTOS_FOR_PHOTOSET,
-  photoSet
+  albumId,
+  photoSetId
 });
 
 export const addPhoto = (albumId, photo, success) => ({
@@ -64,3 +65,5 @@ export const removePhoto = (photo) => ({
 export const removePhotoDetail = () => ({
   type: PhotoConstants.REMOVE_PHOTO_DETAIL
 });
+
+export const receiveCoverPhoto = () => ({})

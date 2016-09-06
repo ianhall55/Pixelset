@@ -10,7 +10,7 @@ const PhotosMiddleware = ({getState, dispatch}) => next => action => {
   switch (action.type) {
     case PhotoConstants.FETCH_PHOTOS_FOR_PHOTOSET:
       const fetchPhotosSuccess = (data) => (dispatch(receiveAllPhotos(data)));
-      fetchPhotosForPhotoSet(action.photoSet, fetchPhotosSuccess);
+      fetchPhotosForPhotoSet(action.albumId, action.photoSetId, fetchPhotosSuccess);
       return next(action);
     case PhotoConstants.ADD_PHOTO:
       const addPhotoSuccess = (data) => {

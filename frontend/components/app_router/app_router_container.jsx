@@ -1,12 +1,12 @@
 import { connect } from 'react-redux';
 import AppRouter from './app_router';
-import { fetchPhotoSet } from '../../actions/photo_sets_actions';
+import { fetchPhotosForPhotoSet } from '../../actions/photos_actions';
 const mapStateToProps = state => ({
   currentUser: state.session.currentUser
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchPhotoSet: (albumId, photoSetId) => dispatch(fetchPhotoSet(albumId, photoSetId))
+  fetchPhotosForPhotoSet: (albumId, photoSetId) => dispatch(fetchPhotosForPhotoSet(albumId, photoSetId))
 });
 
 

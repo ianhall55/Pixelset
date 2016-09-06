@@ -31,16 +31,24 @@ class AlbumIndexItem extends React.Component {
   }
 
   render () {
+    const cover_photo = this.props.album.cover_photo;
+    let cover;
+    if (cover_photo) {
+      cover = <img src={url(cover_photo.public_id + ".jpg", {
+        width: 210, height: 151, crop: 'fill',
+        cloud_name: window.cloudinary_options['cloud_name']
+      })} />;
+    } else {
+      cover = <img src={url("IMG_0931-2_ojeggc.jpg", {
+        width: 210, height: 151, crop: 'fill',
+        cloud_name: window.cloudinary_options['cloud_name']
+      })} />;
+    }
     return (
       <li>
-
           { <Link to={`/album/${this.props.album.id}`}>
             <div className="album-item-image-holder">
-              <img src={url(this.props.album.cover_photo.public_id + ".jpg", {
-                width: 210, height: 151, crop: 'fill',
-                cloud_name: window.cloudinary_options['cloud_name']
-              })} />
-
+              {cover}
             </div>
           </Link> }
 

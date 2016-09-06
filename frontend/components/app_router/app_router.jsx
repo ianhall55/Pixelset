@@ -14,7 +14,7 @@ class AppRouter extends React.Component {
     this._ensureLoggedIn = this._ensureLoggedIn.bind(this);
     this._redirectIfLoggedIn = this._redirectIfLoggedIn.bind(this);
     this._createRoutes = this._createRoutes.bind(this);
-    this.requestPhotoSet = this.requestPhotoSet.bind(this);
+    this.requestPhotos = this.requestPhotos.bind(this);
   }
 
   _ensureLoggedIn(nextState, replace){
@@ -31,8 +31,8 @@ class AppRouter extends React.Component {
     }
   }
 
-  requestPhotoSet(nextState){
-    this.props.fetchPhotoSet(nextState.params.albumId, nextState.params.photoSetId);
+  requestPhotos(nextState){
+    this.props.fetchPhotosForPhotoSet(nextState.params.albumId, nextState.params.photoSetId);
   }
 
   _createRoutes() {
@@ -44,7 +44,7 @@ class AppRouter extends React.Component {
         <Route path="/home" component={ AlbumsIndexContainer } onEnter={this._ensureLoggedIn}/>
         <Route path="/album/:albumId" component={ AlbumViewContainer } onEnter={this._ensureLoggedIn} >
           <Route path="photo_set/:photoSetId" component={ PhotoSetViewContainer}
-              onEnter={this.requestPhotoSet} />
+              onEnter={this.requestPhotos} />
         </Route>
       </Route>
     );

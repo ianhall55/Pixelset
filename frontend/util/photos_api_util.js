@@ -1,8 +1,8 @@
 
-export const fetchPhotosForPhotoSet = function(photoSet, success) {
+export const fetchPhotosForPhotoSet = function(albumId, photoSetId, success) {
   $.ajax({
     method: 'GET',
-    url: `api/albums/${photoSet.album_id}/photo_sets/${photoSet.id}/photos`,
+    url: `api/albums/${albumId}/photo_sets/${photoSetId}/photos`,
     success
   });
 };

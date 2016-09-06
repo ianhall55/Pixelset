@@ -15,10 +15,6 @@ class PhotosIndex extends React.Component {
 
   }
 
-  componentDidMount(){
-    this.props.fetchPhotosForPhotoSet(this.props.photoSet);
-  }
-
   closeModal(){
     this.setState({modalOpen: false});
   }
