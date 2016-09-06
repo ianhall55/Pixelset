@@ -158,7 +158,7 @@ ul.album-index-item {
 
 
 .album-view-sidebar {
-    padding: 0px 10px;
+    padding: 0px 40px;
     width: 250px;
     height: 900px;
     display: block;
@@ -169,6 +169,7 @@ ul.album-index-item {
 .photo-set-view {
     display: block;
     float: left;
+    padding: 0px 40px;
 }
 
 html, body {

@@ -27,8 +27,10 @@ class AlbumView extends React.Component {
       return(
         <div className="album-view-page">
           <HomeHeaderContainer album={album} />
-          <AlbumViewSidebar album={album} />
-          {this.props.children}
+          <section className="album-content">
+            <AlbumViewSidebar album={album} />
+            {this.props.children}
+          </section>
 
         </div>
       );

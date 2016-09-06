@@ -55,7 +55,7 @@ class PhotosIndex extends React.Component {
     return(
       <section className='photo-index-section'>
         <div className="photo-set-header" >
-          {this.props.photoSet.title}
+          <h2>{this.props.photoSet.title}</h2>
           <button className="new-button" id="add-photo"
             onClick={this.upload}>+ Add Photo</button>
         </div>
