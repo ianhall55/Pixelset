@@ -3,25 +3,31 @@ import HomeHeaderContainer from '../../home_header/home_header_container.jsx';
 import Modal from 'react-modal';
 import ModalStyle from '../../modal_styles';
 import AlbumViewSidebar from '../album_view_sidebar/album_view_sidebar.jsx';
-import { withRouter } from 'react-router';
+import { withRouter, hashHistory } from 'react-router';
 
 class AlbumView extends React.Component {
   constructor(props){
     super(props);
 
+    this.goToFirstPhotoSet = this.goToFirstPhotoSet.bind(this);
     this.state = {
      albumId: this.props.params.albumId,
    };
   }
 
   componentDidMount(){
-    this.props.fetchAlbum(this.state.albumId);
+    this.props.fetchAlbum(this.state.albumId, this.goToFirstPhotoSet);
   }
 
-
+  goToFirstPhotoSet(){
+    let album = this.props.albums[this.state.albumId];
+    let photoSet = album.photo_sets[0];
+    if (photoSet){
+      hashHistory.push(`album/${album.id}/photo_set/${photoSet.id}`);
+    }
+  }
 
   render() {
-
     const album = this.props.albums[this.state.albumId];
     if (album) {
       return(

@@ -23,7 +23,10 @@ const AlbumsMiddleware = ({getState, dispatch}) => next => action => {
       addAlbum(action.album, addAlbumSuccess, errorCallback);
       return next(action);
     case AlbumConstants.FETCH_ALBUM:
-      const fetchAlbumSuccess = (data) => (dispatch(receiveAlbum(data)));
+      const fetchAlbumSuccess = (data) => {
+        dispatch(receiveAlbum(data));
+        action.success();
+      };
       fetchAlbum(action.id, fetchAlbumSuccess, errorCallback);
       return next(action);
     case AlbumConstants.UPDATE_ALBUM:

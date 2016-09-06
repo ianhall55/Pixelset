@@ -9,7 +9,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchAlbum: (id) => dispatch(fetchAlbum(id))
+  fetchAlbum: (id, success) => dispatch(fetchAlbum(id, success))
 });
 
 export default connect(

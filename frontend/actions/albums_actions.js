@@ -20,9 +20,10 @@ export const addAlbum = (album, success) => ({
   success
 });
 
-export const fetchAlbum = (id) => ({
+export const fetchAlbum = (id, success) => ({
   type: AlbumConstants.FETCH_ALBUM,
-  id
+  id,
+  success
 });
 
 export const updateAlbum = (album, success) => ({
