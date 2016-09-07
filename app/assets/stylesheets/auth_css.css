@@ -105,7 +105,7 @@ h2.splash-link {
     text-align: center;
 }
 
-button, input[type="submit"] {
+button, input[type="submit"], input[type="button"] {
  cursor: pointer;
  transition: filter .3s, -webkit-filter .3s;
 }
@@ -120,4 +120,20 @@ li.error {
   margin: auto;
   color: red;
   text-align: center;
+}
+
+
+input.guest-login {
+    padding: 10px 10px;
+    font-size: 14px;
+    background: darkgrey;
+    -webkit-appearance: button;
+    color: #FFF;
+    letter-spacing: 1px;
+    border: 0;
+    text-decoration: none;
+    font-weight: 400;
+    display: block;
+    margin: auto;
+    margin-top: 10px;
 }

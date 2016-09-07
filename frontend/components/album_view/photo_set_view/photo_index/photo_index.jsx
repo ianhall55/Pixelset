@@ -1,8 +1,7 @@
 import React from 'react';
 import PhotoIndexItem from './photo_index_item';
 import { url } from 'cloudinary';
-// import CreatePhotoSetContainer from './create_photo_set_form/create_photo_set_container.jsx';
-
+import PhotoSelectionHeader from './photo_selection_header.jsx';
 
 
 class PhotosIndex extends React.Component {
@@ -10,17 +9,13 @@ class PhotosIndex extends React.Component {
     super(props);
 
     this.upload = this.upload.bind(this);
-    this.openModal = this.openModal.bind(this);
-    this.closeModal = this.closeModal.bind(this);
+    this.handleSelected = this.handleSelected.bind(this);
+    this.selectAll = this.selectAll.bind(this);
+    this.clearSelection = this.clearSelection.bind(this);
+    this.state = {
+      selected: []
+    };
 
-  }
-
-  closeModal(){
-    this.setState({modalOpen: false});
-  }
-
-  openModal(){
-    this.setState({modalOpen: true});
   }
 
   upload(e){
@@ -42,13 +37,40 @@ class PhotosIndex extends React.Component {
     );
   }
 
+  handleSelected(photoId){
+    let newSelected = this.state.selected;
+    let index = newSelected.indexOf(photoId);
+    if (index > -1){
+      newSelected.splice(index,1);
+    } else {
+      newSelected.push(photoId);
+      newSelected.sort();
+    }
+    console.log(newSelected);
+    this.setState({selected: newSelected});
+  }
+
+  selectAll(e){
+    e.preventDefault();
+    let ids = [];
+    for (let key in this.props.photos){
+      ids.push(this.props.photos[key].id);
+    }
+    this.setState({selected: ids});
+  }
+
+  clearSelection(e){
+    e.preventDefault();
+    this.setState({selected: []});
+  }
 
   render() {
     const cloud_name = window.cloudinary_options['cloud_name'];
     const photoLines = [];
     for (let id in this.props.photos) {
       photoLines.push(
-        <PhotoIndexItem key={id} photo={this.props.photos[id]} />
+        <PhotoIndexItem key={id} photo={this.props.photos[id]}
+            handleSelected={this.handleSelected} selected={this.state.selected}/>
       );
     }
 
@@ -59,7 +81,11 @@ class PhotosIndex extends React.Component {
           <button className="new-button" id="add-photo"
             onClick={this.upload}>+ Add Photo</button>
         </div>
+
         <div className="photo-index-content">
+          <PhotoSelectionHeader selected={this.state.selected}
+            selectAll={this.selectAll} clearSelection={this.clearSelection} />
+
           <ul className="photo-index-item">
             {photoLines}
           </ul>

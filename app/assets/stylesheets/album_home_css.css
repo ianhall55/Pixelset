@@ -170,6 +170,8 @@ ul.album-index-item {
     display: block;
     float: left;
     padding: 0px 40px;
+    min-width: 400px;
+    width: 100%;
 }
 
 html, body {
@@ -193,7 +195,7 @@ div {}
 
 .photo-index-item li {
     display: inline-block;
-    padding: 10px;
+    padding: 30px 10px;
     border: 1px solid lightgrey;
     margin-right: 10px;
     margin-bottom: 10px;

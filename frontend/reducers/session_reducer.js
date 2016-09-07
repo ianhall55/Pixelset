@@ -10,7 +10,6 @@ const SessionReducer = function(state = _defaultState, action){
   switch (action.type) {
     case SessionConstants.RECEIVE_CURRENT_USER:
       const currentUser = action.currentUser;
-      hashHistory.push("/home");
       return merge({}, _defaultState, {currentUser});
     case SessionConstants.LOGOUT:
       return _defaultState;

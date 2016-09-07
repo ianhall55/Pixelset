@@ -12,6 +12,7 @@ class SignupForm extends React.Component {
       password: ""
     };
 
+    this.loginDemo = this.loginDemo.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
@@ -54,6 +55,11 @@ class SignupForm extends React.Component {
 			</ul>
 		);
 
+  }
+
+  loginDemo() {
+    const user = { username: 'guest', password: 'password' };
+    this.props.login({user});
   }
 
   render() {
@@ -99,9 +105,13 @@ class SignupForm extends React.Component {
 
 						<br />
 						<input className="login-submit" type="submit" value="GET STARTED" />
+            <input type="button"
+                       value="Log in with Demo"
+                       className="guest-login"
+                       onClick={this.loginDemo} />
             <br />
               <label className="form-footer">
-                Already have and account? { <Link to="/login">Log in</Link> }
+                Already have an account? { <Link to="/login">Log in</Link> }
               </label>
 
 					</div>
