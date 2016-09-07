@@ -27,6 +27,15 @@ export const addPhoto = function(albumId, photoSetId, photo, success, error) {
   });
 };
 
+export const destroyPhoto = function( photos, success, error ) {
+  $.ajax({
+    method: 'DELETE',
+    url: `api/albums/1/photo_sets/1/photos/1`,
+    data: photos,
+    success,
+    error
+  });
+};
 // export const updatePhoto = function(albumId, photoSetId, photo, success, error) {
 //   $.ajax({
 //     method: 'PATCH',
@@ -37,12 +46,3 @@ export const addPhoto = function(albumId, photoSetId, photo, success, error) {
 //   });
 // };
 //
-// export const destroyPhoto = function( albumId, photoSetId, photo, success, error) {
-//   $.ajax({
-//     method: 'DELETE',
-//     url: `api/albums/${albumId}/photo_sets/${photoSetId}/photos/${photo.id}`,
-//     data: photo,
-//     success,
-//     error
-//   });
-// };

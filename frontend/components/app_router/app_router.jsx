@@ -7,6 +7,7 @@ import AlbumsIndexContainer from '../albums_index/albums_index_container.jsx';
 import SplashContainer from '../splash/splash_container.jsx';
 import AlbumViewContainer from '../album_view/album_view_main/album_view_container';
 import PhotoSetViewContainer from '../album_view/photo_set_view/photo_set_view_container.jsx';
+import PhotoSlider from '../album_view/photo_set_view/photo_index/photo_slider.jsx';
 
 class AppRouter extends React.Component {
   constructor(props){
@@ -47,6 +48,7 @@ class AppRouter extends React.Component {
           <Route path="photo_set/:photoSetId" component={ PhotoSetViewContainer}
               onEnter={this.requestPhotos} />
         </Route>
+        <Route path="/photo_slider" component={ PhotoSlider } />
       </Route>
     );
   }

@@ -6,6 +6,7 @@ import PhotosMiddleware from './photos_middleware';
 import logger from 'redux-logger';
 
 const RootMiddleware = applyMiddleware(
+  logger(),
   SessionMiddleware,
   AlbumsMiddleware,
   PhotoSetsMiddleware,

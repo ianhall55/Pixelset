@@ -171,6 +171,7 @@ ul.album-index-item {
     float: left;
     padding: 0px 40px;
     min-width: 400px;
+    max-width: 1000px;
     width: 100%;
 }
 

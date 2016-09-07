@@ -59,8 +59,7 @@ class PhotosIndex extends React.Component {
     this.setState({selected: ids});
   }
 
-  clearSelection(e){
-    e.preventDefault();
+  clearSelection(){
     this.setState({selected: []});
   }
 
@@ -69,7 +68,7 @@ class PhotosIndex extends React.Component {
     const photoLines = [];
     for (let id in this.props.photos) {
       photoLines.push(
-        <PhotoIndexItem key={id} photo={this.props.photos[id]}
+        <PhotoIndexItem key={id} photo={this.props.photos[id]} clearSelection={this.clearSelection}
             handleSelected={this.handleSelected} selected={this.state.selected}/>
       );
     }
@@ -83,7 +82,7 @@ class PhotosIndex extends React.Component {
         </div>
 
         <div className="photo-index-content">
-          <PhotoSelectionHeader selected={this.state.selected}
+          <PhotoSelectionHeader selected={this.state.selected} photos={this.props.photos}
             selectAll={this.selectAll} clearSelection={this.clearSelection} />
 
           <ul className="photo-index-item">

@@ -1,7 +1,5 @@
 import React from 'react';
 import HomeHeaderContainer from '../../home_header/home_header_container.jsx';
-import Modal from 'react-modal';
-import ModalStyle from '../../modal_styles';
 import AlbumViewSidebar from '../album_view_sidebar/album_view_sidebar.jsx';
 import { withRouter, hashHistory } from 'react-router';
 

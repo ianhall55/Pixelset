@@ -1,6 +1,7 @@
 import { PhotoConstants, receiveAllPhotos, receiveNewPhoto,
-  receiveCoverPhoto } from '../actions/photos_actions';
-import { fetchPhotosForPhotoSet, addPhoto, fetchPhoto } from '../util/photos_api_util';
+  receiveCoverPhoto, removePhoto } from '../actions/photos_actions';
+import { fetchPhotosForPhotoSet, addPhoto, fetchPhoto,
+  destroyPhoto } from '../util/photos_api_util';
 // import { receiveCreatePhotoErrors, receiveUpdatePhotoErrors } from '../actions/forms_actions';
 import { withRouter, hashHistory } from 'react-router';
 
@@ -41,14 +42,13 @@ const PhotosMiddleware = ({getState, dispatch}) => next => action => {
     //   };
     //   updatePhoto(action.photo_set, updatePhotoSuccess, errorCallback);
     //   return next(action);
-    // case PhotoConstants.DESTROY_PHOTOSET:
-    //   const destroyPhotoSuccess = (data) => {
-    //     dispatch(removePhoto(data));
-    //     hashHistory.push(`/album/${data.album_id}`);
-    //     dispatch(removePhotoDetail());
-    //   };
-    //   destroyPhoto(action.photo_set, destroyPhotoSuccess, errorCallback);
-    //   return next(action);
+    case PhotoConstants.DESTROY_PHOTO:
+      const destroyPhotoSuccess = (data) => {
+        action.success();
+        dispatch(removePhoto(data));
+      };
+      destroyPhoto(action.photos, destroyPhotoSuccess, errorCallback);
+      return next(action);
     default:
       return next(action);
   }

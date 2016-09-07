@@ -37,9 +37,10 @@ export const updatePhoto = (photo, success) => ({
   success
 });
 
-export const destroyPhoto = (photo) => ({
+export const destroyPhoto = (photos, success) => ({
   type: PhotoConstants.DESTROY_PHOTO,
-  photo
+  photos,
+  success
 });
 
 export const receiveAllPhotos = (photos) => ({
@@ -57,9 +58,9 @@ export const receiveNewPhoto = (photo) => ({
   photo
 });
 
-export const removePhoto = (photo) => ({
+export const removePhoto = (photoIds) => ({
   type: PhotoConstants.REMOVE_PHOTO,
-  photo
+  photoIds
 });
 
 export const removePhotoDetail = () => ({

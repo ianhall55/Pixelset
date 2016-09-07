@@ -12,9 +12,9 @@ const PhotosReducer = function(state = {}, action){
       photo = action.photo;
       return merge({}, state, photo);
     case PhotoConstants.REMOVE_PHOTO:
-      const photoId = action.photo.id;
+      const photoIds = action.photoIds;
       newState = merge({}, state);
-      delete newState[photoId];
+      photoIds.forEach((id) => (delete newState[id]));
       return newState;
     case PhotoConstants.RECEIVE_PHOTO_ERRORS:
       const errors = action.errors;

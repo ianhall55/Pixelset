@@ -1,19 +1,24 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
-import ModalStyle from '../../../modal_styles';
+import {SliderStyle, DeleteStyle} from './modal_slider_style';
+import PhotoSlider from './photo_slider.jsx';
+import { hashHistory } from 'react-router';
+import DeletePhotoContainer from './delete_photo_form/delete_photo_form_container.jsx';
 
 class PhotoSelectionHeader extends React.Component {
   constructor(props){
     super(props);
 
+
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
-    this.determineComponent = this.determineComponent.bind(this);
+    this.selectedPhotos = this.selectedPhotos.bind(this);
     this.setView = this.setView.bind(this);
     this.setDelete = this.setDelete.bind(this);
     this.state = {
      modalOpen: false,
-     style: ModalStyle,
+     style: {SliderStyle},
      type: ""
     };
   }
@@ -26,34 +31,42 @@ class PhotoSelectionHeader extends React.Component {
     this.setState({modalOpen: true});
   }
 
-  determineComponent(e){
-    e.preventDefault();
-    if (this.state.type === "view") {
-      return(<div>View Modal</div>);
-    } else {
-      return(<div>Delete Modal</div>);
-    }
+  renderPhotoSlider(){
 
   }
 
   setView(e){
     e.preventDefault();
-    this.setState({ type: "view" });
+    this.setState({ type: "view", style: SliderStyle });
     this.openModal();
   }
 
   setDelete(e){
     e.preventDefault();
-    this.setState({ type: "delete" });
+    this.setState({ type: "delete", style: DeleteStyle });
     this.openModal();
+  }
+
+  selectedPhotos(){
+    let photos = {};
+    this.props.selected.forEach((i) => {
+      photos[i] = this.props.photos[i];
+    });
+    return photos;
   }
 
   render(){
     let component;
     if (this.state.type === "view") {
-      component = <div>View Modal</div>;
+      let photos = this.selectedPhotos();
+      component = <PhotoSlider photos={photos}/>;
     } else {
-      component = <div>Delete Modal</div>;
+      component = (
+        <div>
+          <DeletePhotoContainer photos={this.selectedPhotos()} closeModal={this.closeModal}
+            clearSelection={this.props.clearSelection}/>
+          <button onClick={this.closeModal}>Close</button>
+        </div>);
     }
 
     if (this.props.selected.length > 0) {
@@ -72,10 +85,9 @@ class PhotoSelectionHeader extends React.Component {
           <Modal
             isOpen={this.state.modalOpen}
             onRequestClose={this.closeModal}
-            style={this.state.style}>
+            style={this.state.style} >
 
             {component}
-            <button onClick={this.closeModal}>Close</button>
           </Modal>
         </header>
       );

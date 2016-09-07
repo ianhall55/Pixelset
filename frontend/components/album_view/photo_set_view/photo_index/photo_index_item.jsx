@@ -20,6 +20,10 @@ class PhotoIndexItem extends React.Component {
     return className;
   }
 
+  componentWillUnmount(){
+    this.props.clearSelection();
+  }
+
   render(){
 
     return(

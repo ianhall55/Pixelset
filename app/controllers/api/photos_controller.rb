@@ -27,9 +27,12 @@ class Api::PhotosController < ApplicationController
   end
 
   def destroy
-    @photo = Photo.find(params[:id])
-    @photo.destroy
-    render json: @photo
+    @photo_ids = []
+    params["photos"].each do |photo|
+      @photo_ids.push(photo[0].to_i)
+    end
+    Photo.where(:id => @photo_ids).destroy_all
+    render json: @photo_ids
   end
 
   def photo_params
