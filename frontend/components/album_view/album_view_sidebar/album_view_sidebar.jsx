@@ -23,7 +23,9 @@ class AlbumViewSidebar extends React.Component {
         <AlbumInfoContainer album={this.props.album}/>
         <PhotoSetIndexContainer album={this.props.album} />
         <div className="gallery-link">
-          <button onClick={this.goToGallery} >View</button>
+          <button onClick={this.goToGallery} >
+            <i className="fa fa-eye"></i> View
+          </button>
         </div>
       </nav>
     );

@@ -48,10 +48,15 @@ class AlbumInfo extends React.Component {
 
     return(
       <div className="album-info">
-        <h2>{this.props.album.title}</h2>
+        <h2>
+          {this.props.album.title}
+          {<button onClick={this.openModal}>
+            <i className="fa fa-pencil edit-album-button"></i>
+           </button>}
+        </h2>
         <h3>{this.props.album.event_date}</h3>
 
-        {<button onClick={this.openModal}>Edit</button>}
+
 
         <div className="album-info-image-holder">
           {cover}

@@ -48,7 +48,7 @@ class PhotoSetsIndex extends React.Component {
             {photoSetLines}
           </ul>
           <button className="new-button" id="new-photo-set"
-            onClick={this.openModal}>+ Add Set</button>
+            onClick={this.openModal}><i className="fa fa-plus"></i> Add Set</button>
         </div>
 
         <Modal
