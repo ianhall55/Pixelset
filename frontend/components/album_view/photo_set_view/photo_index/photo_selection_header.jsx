@@ -31,9 +31,6 @@ class PhotoSelectionHeader extends React.Component {
     this.setState({modalOpen: true});
   }
 
-  renderPhotoSlider(){
-
-  }
 
   setView(e){
     e.preventDefault();

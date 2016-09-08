@@ -7,7 +7,8 @@ import AlbumsIndexContainer from '../albums_index/albums_index_container.jsx';
 import SplashContainer from '../splash/splash_container.jsx';
 import AlbumViewContainer from '../album_view/album_view_main/album_view_container';
 import PhotoSetViewContainer from '../album_view/photo_set_view/photo_set_view_container.jsx';
-import PhotoSlider from '../album_view/photo_set_view/photo_index/photo_slider.jsx';
+import GalleryContainer from '../gallery_view/gallery_container.jsx';
+import GalleryPhotoSetContainer from '../gallery_view/gallery_photo_set_container.jsx';
 
 class AppRouter extends React.Component {
   constructor(props){
@@ -16,6 +17,7 @@ class AppRouter extends React.Component {
     this._redirectIfLoggedIn = this._redirectIfLoggedIn.bind(this);
     this._createRoutes = this._createRoutes.bind(this);
     this.requestPhotos = this.requestPhotos.bind(this);
+    this.requestGallery = this.requestGallery.bind(this);
   }
 
   _ensureLoggedIn(nextState, replace){
@@ -32,10 +34,15 @@ class AppRouter extends React.Component {
     }
   }
 
+  requestGallery(nextState){
+    this.props.fetchGallery(nextState.params.albumId);
+  }
+
   requestPhotos(nextState){
     this.props.fetchPhotosForPhotoSet(nextState.params.albumId, nextState.params.photoSetId);
     this.props.fetchPhotoSet(nextState.params.albumId, nextState.params.photoSetId);
   }
+
 
   _createRoutes() {
     return (
@@ -45,10 +52,13 @@ class AppRouter extends React.Component {
         <Route path="/signup" component={ SignupFormContainer } onEnter={this._redirectIfLoggedIn}/>
         <Route path="/home" component={ AlbumsIndexContainer } onEnter={this._ensureLoggedIn}/>
         <Route path="/album/:albumId" component={ AlbumViewContainer } onEnter={this._ensureLoggedIn} >
-          <Route path="photo_set/:photoSetId" component={ PhotoSetViewContainer}
+          <Route path="photo_set/:photoSetId" component={ PhotoSetViewContainer }
               onEnter={this.requestPhotos} />
         </Route>
-        <Route path="/photo_slider" component={ PhotoSlider } />
+        <Route path="/gallery/:albumId" component={ GalleryContainer } >
+          <Route path="photo_set/:photoSetId" component={GalleryPhotoSetContainer}
+              onEnter={this.requestPhotos} />
+        </Route>
       </Route>
     );
   }

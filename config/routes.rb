@@ -8,6 +8,7 @@ Rails.application.routes.draw do
         resources :photos
       end
     end
+    resources :galleries, only: [:show]
   end
 
   root "static_pages#root"

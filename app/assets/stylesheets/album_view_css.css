@@ -107,3 +107,8 @@ header.photo-selection-header {
     filter: brightness(85%);
     cursor: pointer;
 }
+
+
+section.photo-set-index-section {
+    padding-top: 20px;
+}

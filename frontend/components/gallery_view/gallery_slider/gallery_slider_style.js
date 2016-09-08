@@ -1,4 +1,4 @@
-const ModalStyle = {
+export const SliderStyle = {
   overlay : {
     position        : 'fixed',
     top             : 0,
@@ -7,19 +7,17 @@ const ModalStyle = {
     bottom          : 0,
     backgroundColor : 'rgba(36,36,36,0.80)'
 
-    },
+  },
   content : {
     position        : 'fixed',
     top             : '50%',
     left            : '50%',
-    height          : '400px',
-    width           : '500px',
+    height          : '700px',
+    width           : '700px',
     transform       : 'translate(-50%, -50%)',
-    border          : '1px solid #ccc',
-    padding         : '20px',
-    borderRadius    : 'none'
+    padding         : null,
+    borderRadius    : 'none',
+    background      : null,
+    border          : null
     }
 };
-
-
-export default ModalStyle;

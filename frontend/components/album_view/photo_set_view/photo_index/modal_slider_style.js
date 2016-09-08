@@ -5,7 +5,7 @@ export const SliderStyle = {
     left            : 0,
     right           : 0,
     bottom          : 0,
-    backgroundColor : 'rgba(128,128,128,0.5)'
+    backgroundColor : 'rgba(36,36,36,0.80)'
 
   },
   content : {
@@ -29,7 +29,7 @@ export const DeleteStyle = {
     left            : 0,
     right           : 0,
     bottom          : 0,
-    backgroundColor : 'rgba(132, 132, 132, 0.5)'
+    backgroundColor : 'rgba(36,36,36,0.80)'
 
     },
   content : {

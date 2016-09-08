@@ -40,7 +40,7 @@ class AlbumInfo extends React.Component {
         cloud_name: window.cloudinary_options['cloud_name']
       })} />;
     } else {
-      cover = <img src={url("IMG_0931-2_ojeggc.jpg", {
+      cover = <img src={url("seed/ocean/o19.jpg", {
         width: 210, height: 151, crop: 'fill',
         cloud_name: window.cloudinary_options['cloud_name']
       })} />;
