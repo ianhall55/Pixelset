@@ -10,7 +10,7 @@ class PhotoSlider extends React.Component {
   photos(){
     let els = [];
     for ( let id in this.props.photos) {
-      els.push(<div><img src={url(this.props.photos[id].public_id + ".jpg", {
+      els.push(<div key={id}><img src={url(this.props.photos[id].public_id + ".jpg", {
         width: 700, height: 600, crop: 'fill',
         cloud_name: window.cloudinary_options['cloud_name']
       })} /></div>);

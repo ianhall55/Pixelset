@@ -30,11 +30,20 @@ class HomeHeader extends React.Component {
             </Link> }
         </div>
         <navbar className="home-nav">
+          <div className="nav-links">
             { <Link className="albums-link" to="/home">
                 <h2 className={"albums-link " + linkSelected}>Portfolio</h2>
               </Link>}
 
-          {links}
+            {links}
+          </div>
+          <div className="logout">
+            <a className="logout-button" onClick={this.props.logout}>
+              <i className="fa fa-power-off fa-fw">
+                <span>Log Out</span>
+              </i>
+            </a>
+          </div>
         </navbar>
 
       </header>

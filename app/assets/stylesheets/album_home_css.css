@@ -119,8 +119,10 @@ navbar.home-nav h2 {
 }
 
 navbar.home-nav {
-    width: 600px;
+    min-width: 600px;
+    width: 80%;
     display: flex;
+    justify-content: space-between;
 }
 
 
@@ -249,4 +251,14 @@ a.set-icon {
 
 .album-item-options h3 {
     font-size: 21px;
+}
+
+
+.nav-links {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logout {
+    padding-top: 20px;
 }

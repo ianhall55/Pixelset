@@ -52,7 +52,7 @@ class PhotoGallery extends React.Component {
         let i = 0;
         for (let id in this.props.photos) {
           childElements.push(
-            <GalleryPhotoItem id={this.props.photos[id].id}
+            <GalleryPhotoItem key={id} id={this.props.photos[id].id}
                 photo={this.props.photos[id]} gallery={this.props.gallery}
                 goToPhoto={this.goToPhoto} value={i}/>
           );

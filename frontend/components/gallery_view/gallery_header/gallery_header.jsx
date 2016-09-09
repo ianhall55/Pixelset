@@ -15,7 +15,7 @@ class GalleryHeader extends React.Component {
     if (this.props.photoSets) {
       this.props.photoSets.map ((set) => (
         photoSets.push(
-          <Link to={`/gallery/${gallery.id}/photo_set/${set.id}`}>
+          <Link to={`/gallery/${gallery.id}/photo_set/${set.id}`} key={set.id}>
             <li className={(set.id === photoSetDetail.id) ? "set-selected" : "" }
               key={set.id}>{set.title}</li>
           </Link>
