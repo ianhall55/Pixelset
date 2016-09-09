@@ -54,8 +54,14 @@ class AlbumIndexItem extends React.Component {
 
         <div className="album-item-options">
           <h3>{this.props.album.title}</h3>
-          {<button onClick={this.openModal}>Edit</button>}
-          {<button onClick={this.handleDestroy}>Delete</button>}
+            <div className="album-options">
+              {<a className="set-icon" onClick={this.openModal}>
+                <i className="fa fa-pencil"></i>
+              </a>}
+              {<a className="set-icon" onClick={this.handleDestroy}>
+                <i className="fa fa-trash-o"></i>
+              </a>}
+            </div>
         </div>
         <Modal
           isOpen={this.state.modalOpen}

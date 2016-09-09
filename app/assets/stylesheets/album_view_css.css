@@ -242,3 +242,22 @@ input.set-submit {
     position: absolute;
     top: 215px;
 }
+
+
+.header-options button {
+    background: #E8E8E8;
+    /* color: #333; */
+    letter-spacing: 1px;
+    font-weight: 400;
+    border: 0;
+    text-decoration: none;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -webkit-transition: background 200ms ease-out;
+    -moz-transition: background 200ms ease-out;
+    /* transition: background 200ms ease-out; */
+    font-size: 14px;
+    margin-right: 5px;
+    padding: 5px 10px;
+}

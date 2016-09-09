@@ -25,7 +25,6 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     store = configureStore();
   }
-  window.store = store;
 
   const root = document.getElementById("root");
   Modal.setAppElement(document.body);
@@ -44,11 +43,11 @@ document.addEventListener("DOMContentLoaded", () => {
 // window.destroyAlbum = destroyAlbum;
 // window.updateAlbum = updateAlbum;
 // window.album = {album: {title: "SF", event_date: new Date("01/05/2015"), owner_id: 1}};
-window.fetchPhotoSetsForAlbum = fetchPhotoSetsForAlbum;
-window.addPhotoSet = addPhotoSet;
-window.destroyPhotoSet = destroyPhotoSet;
-window.updatePhotoSet = updatePhotoSet;
-window.photoSet = {photo_set: {title: "Koh Lipe", album_id: 1}};
-window.photo = {photo: {image_url: "http://res.cloudinary.com/de79besd8/image/upload/v1473032728/IMG_0931-2_ojeggc.jpg",
-    photo_set_id: 1, ord: 1}}
-window.addPhoto = addPhoto;
+// window.fetchPhotoSetsForAlbum = fetchPhotoSetsForAlbum;
+// window.addPhotoSet = addPhotoSet;
+// window.destroyPhotoSet = destroyPhotoSet;
+// window.updatePhotoSet = updatePhotoSet;
+// window.photoSet = {photo_set: {title: "Koh Lipe", album_id: 1}};
+// window.photo = {photo: {image_url: "http://res.cloudinary.com/de79besd8/image/upload/v1473032728/IMG_0931-2_ojeggc.jpg",
+//     photo_set_id: 1, ord: 1}}
+// window.addPhoto = addPhoto;

@@ -86,10 +86,18 @@ class PhotoSelectionHeader extends React.Component {
             <span onClick={this.props.selectAll} >{'Select all'}</span>
             <span onClick={this.props.clearSelection} >{"Clear Selection"}</span>
           </div>
-          <div>
-            <button onClick={this.makeCover} disabled={makeCover}>Make Cover</button>
-            <button onClick={this.setView}>View</button>
-            <button onClick={this.setDelete}>Delete</button>
+          <div className="header-options">
+            <button onClick={this.setView}>
+              <i className="fa fa-search-plus"></i>
+            </button>
+            <button onClick={this.makeCover} disabled={makeCover}>
+              <i className="fa fa-picture-o">
+                Make Cover
+              </i>
+            </button>
+            <button onClick={this.setDelete}>
+              <i className="fa fa-trash-o"></i>
+            </button>
           </div>
 
           <Modal

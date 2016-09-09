@@ -215,3 +215,38 @@ a.albums-link {
     display: block;
     font-size: 17px;
 }
+
+
+.album-item-options {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    /* padding-left: 10px; */
+    padding-right: 10px;
+    padding-top: 9px;
+}
+
+a.set-icon {
+    margin-right: 15px;
+    /* margin-bottom: 8px; */
+    text-decoration: none;
+    font-family: inherit;
+    transition: all 200ms ease-out;
+    color: #1abc9c;
+    outline: 0!important;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: 8px;
+}
+
+
+.album-options {
+    padding-right: 10px;
+    display: flex;
+    padding-top: 8px;
+}
+
+.album-item-options h3 {
+    font-size: 21px;
+}
