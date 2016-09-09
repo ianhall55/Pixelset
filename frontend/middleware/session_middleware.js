@@ -26,7 +26,10 @@ const SessionMiddleware = ({getState, dispatch}) => next => action => {
       login(action.user, loginSuccess, errorCallback);
       return next(action);
     case SessionConstants.LOGOUT:
-      const logoutSuccess = () => next(action);
+      const logoutSuccess = () => {
+        next(action);
+        hashHistory.push("/");
+      };
       logout(logoutSuccess);
       break;
     default:
