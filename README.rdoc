@@ -1,7 +1,0 @@
-== Memry
-
-Full stack project for App Academy
-
-This is a photo sharing site that is inspired by Pixieset
-
-Coded using Ruby, Rails, Javascript, React, Redux
