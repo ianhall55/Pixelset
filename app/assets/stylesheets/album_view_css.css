@@ -15,7 +15,12 @@ button {}
 }
 
 .photo-set-item-options {
-    display: inline-block;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    /* margin-right: 20px; */
+    padding-top: 8px;
+    /* transition: filter .3s, -webkit-filter .3s; */
 }
 
 photo-set-item-options a {
@@ -25,7 +30,8 @@ photo-set-item-options a {
 
 .photo-set-item-options h3 {
     text-decoration: none;
-    color: black;
+    color: #333;
+    font-size: 18px;
 }
 
 a.photo-set-item-options {
@@ -36,6 +42,7 @@ a.photo-set-item-options {
 
 section.album-content {
     display: flex;
+    height: 100%;
 }
 
 .photo-set-header {
@@ -111,4 +118,127 @@ header.photo-selection-header {
 
 section.photo-set-index-section {
     padding-top: 20px;
+}
+
+.album-info a {
+    transition: all 200ms ease-out;
+    color: #1abc9c;
+    outline: 0!important;
+    margin-left: 10px;
+}
+
+a:hover {
+    cursor: pointer;
+    filter: brightness(75%);
+}
+
+
+.view-content {
+    height: 75%;
+}
+
+
+.photo-set-item-options a {
+    margin-right: 15px;
+    /* margin-bottom: 8px; */
+    text-decoration: none;
+    font-family: inherit;
+    transition: all 200ms ease-out;
+    color: #1abc9c;
+    outline: 0!important;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: 8px;
+}
+
+.photo-set-item-options h3 {
+    margin-left: 10px;
+}
+
+
+button#new-photo-set {
+    /* color: #888; */
+    border: none;
+    width: 120px;
+    font-size: 15px;
+    background-color: white;
+    letter-spacing: 1px;
+    margin-top: 10px;
+}
+
+.photo-set-index-item li:hover {
+    brightness: 85%;
+}
+
+.photo-set-index-item li:hover {
+    /* transition: all 200ms ease-out; */
+    cursor: pointer;
+    transition: filter .3s, -webkit-filter .3s;
+    background: lightgrey;
+}
+
+
+.view {
+    background: #1abc9c;
+    color: #FFF;
+    border: 0;
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-size: 16px;
+    height: 40px;
+    padding: 6px 13px;
+    /* display: block; */
+    margin: auto;
+}
+
+
+.gallery-link {
+    display: flex;
+    justify-content: center;
+}
+
+
+label.create-form-title {
+    /* background-color: darkgrey; */
+    width: 100%;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+
+.create-form {
+    width: 100%;
+    height: 186px;
+    /* display: flex; */
+}
+
+input.create-input {
+    margin-left: 20px;
+    width: 420px;
+    height: 22px;
+    font-size: 25px;
+    padding: 13px;
+}
+
+.create-form input[type="submit"] {
+    display: block;
+    margin-top: 10px;
+    margin-left: 183px;
+}
+
+button {
+    /* display: block; */
+    /* margin: auto; */
+    /* border: none; */
+    /* font-size: 17px; */
+    /* color: white; */
+    /* padding: 8px 27px; */
+}
+
+
+input.set-submit {
+    position: absolute;
+    top: 215px;
 }

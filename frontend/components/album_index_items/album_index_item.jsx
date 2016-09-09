@@ -63,7 +63,7 @@ class AlbumIndexItem extends React.Component {
           style={this.state.style}>
 
           <UpdateAlbumContainer album={this.props.album} closeModal={this.closeModal}/>
-          <button onClick={this.closeModal}>Close</button>
+          <button className="close-modal" onClick={this.closeModal}>Close</button>
         </Modal>
       </li>
     );

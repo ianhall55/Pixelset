@@ -46,7 +46,6 @@ class PhotosIndex extends React.Component {
       newSelected.push(photoId);
       newSelected.sort();
     }
-    console.log(newSelected);
     this.setState({selected: newSelected});
   }
 
@@ -72,7 +71,6 @@ class PhotosIndex extends React.Component {
             handleSelected={this.handleSelected} selected={this.state.selected}/>
       );
     }
-
     return(
       <section className='photo-index-section'>
         <div className="photo-set-header" >
@@ -83,7 +81,9 @@ class PhotosIndex extends React.Component {
 
         <div className="photo-index-content">
           <PhotoSelectionHeader selected={this.state.selected} photos={this.props.photos}
-            selectAll={this.selectAll} clearSelection={this.clearSelection} />
+            photoSet={this.props.photoSet} albums={this.props.albums}
+            selectAll={this.selectAll} clearSelection={this.clearSelection}
+            updateAlbum={this.props.updateAlbum} />
 
           <ul className="photo-index-item">
             {photoLines}

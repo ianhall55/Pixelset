@@ -42,7 +42,7 @@ class PhotoView extends React.Component {
           style={this.state.style}>
 
 
-          <button onClick={this.closeModal}>Close</button>
+          <button className="close-modal" onClick={this.closeModal}>Close</button>
         </Modal>
       </li>
     );

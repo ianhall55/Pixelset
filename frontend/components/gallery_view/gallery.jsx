@@ -25,11 +25,19 @@ class Gallery extends React.Component {
 
   render(){
     if(this.props.gallery.id){
-      let cover_url = url(this.props.gallery.cover_photo.public_id + ".jpg", {
-        cloud_name: window.cloudinary_options['cloud_name']
-      });
-      let coverStyle = {backgroundImage: 'url('+cover_url+')'};
-
+      let cover_url;
+      let coverStyle;
+      if(this.props.gallery.cover_photo){
+        cover_url = url(this.props.gallery.cover_photo.public_id + ".jpg", {
+          cloud_name: window.cloudinary_options['cloud_name']
+        });
+        coverStyle = {backgroundImage: 'url('+cover_url+')'};
+      } else {
+        cover_url = url("seed/ocean/o19.jpg", {
+          cloud_name: window.cloudinary_options['cloud_name']
+        });
+        coverStyle = {backgroundImage: 'url('+cover_url+')'};
+      }
 
       return(
 

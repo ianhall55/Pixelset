@@ -55,7 +55,7 @@ class DeletePhotoForm extends React.Component {
  					{ this.renderErrors() }
  					<div className="create-form">
  						<br />
- 						<label> "Are you sure you want to delete?"</label>
+ 						<label>Are you sure you want to delete?</label>
  						<br />
  						<input type="submit" value="Delete" />
              <br/>

@@ -47,6 +47,7 @@ const PhotoSetsMiddleware = ({getState, dispatch}) => next => action => {
       return next(action);
     case PhotoSetConstants.DESTROY_PHOTOSET:
       const destroyPhotoSetSuccess = (data) => {
+        action.success();
         dispatch(removePhotoSet(data));
         hashHistory.push(`/album/${data.album_id}`);
         dispatch(removePhotoSetDetail());

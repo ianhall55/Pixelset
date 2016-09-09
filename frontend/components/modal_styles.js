@@ -12,7 +12,7 @@ const ModalStyle = {
     position        : 'fixed',
     top             : '50%',
     left            : '50%',
-    height          : '400px',
+    height          : '300px',
     width           : '500px',
     transform       : 'translate(-50%, -50%)',
     border          : '1px solid #ccc',

@@ -1,6 +1,7 @@
 body {
   width: 100%;
   height: 100%;
+  font-family: proxima-nova,Lato,"Lucida Sans Unicode","Lucida Grande",sans-serif;
 }
 
 .gallery-home {
@@ -93,10 +94,19 @@ li.set-selected {
 
 
 button.close-modal {
-    height: 100%;
-    width: 100%;
-    background: none;
+    /* height: 100%; */
+    /* width: 100%; */
+    /* background: none; */
+    /* border: none; */
+    display: block;
+    margin: auto;
     border: none;
+    font-size: 17px;
+    color: white;
+    padding: 8px 27px;
+    position: absolute;
+    top: 290px;
+    left: 220px;
 }
 
 
@@ -110,7 +120,7 @@ button.close-modal {
     -moz-transform: translateY(-50%);
     /* -webkit-transform: translateY(-50%); */
     transform: translateY(-50%);
-    
+
 }
 
 
@@ -143,4 +153,17 @@ section.title {
     line-height: 2em;
     padding: 10px;
     text-decoration: none;
+}
+
+
+.photo-link:hover {
+    cursor: pointer;
+}
+
+
+.photo-set-edit {
+    margin-right: 10px;
+    width: 30px;
+    display: flex;
+    margin-top: 3px;
 }

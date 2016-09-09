@@ -6,13 +6,15 @@ class Api::AlbumsController < ApplicationController
 
   def show
     @album = Album.find(params[:id])
-    
+
     render :show
   end
 
   def create
     @album = Album.new(album_params)
     if @album.save
+      @photo_set = PhotoSet.create!({title: 'Highlights', album_id: @album.id, ord: 1})
+
       render :show
     else
       render json: @album.errors.full_messages, status: 422

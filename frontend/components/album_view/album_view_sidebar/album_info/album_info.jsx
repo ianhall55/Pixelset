@@ -50,9 +50,10 @@ class AlbumInfo extends React.Component {
       <div className="album-info">
         <h2>
           {this.props.album.title}
-          {<button onClick={this.openModal}>
+          {<a
+            onClick={this.openModal}>
             <i className="fa fa-pencil edit-album-button"></i>
-           </button>}
+           </a>}
         </h2>
         <h3>{this.props.album.event_date}</h3>
 
@@ -69,7 +70,7 @@ class AlbumInfo extends React.Component {
           style={this.state.style}>
 
           <UpdateAlbumContainer album={this.props.album} closeModal={this.closeModal}/>
-          <button onClick={this.closeModal}>Close</button>
+          <button className="close-modal" onClick={this.closeModal}>Close</button>
         </Modal>
       </div>
     );

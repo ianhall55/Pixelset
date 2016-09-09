@@ -3,12 +3,14 @@
 // import PhotoSelectionHeader from './photo_selection_header.jsx';
 // import { destroyPhoto } from '../../../../actions/photos_actions';
 //
-// const mapStateToProps = state => ({
 //
+//
+// const mapStateToProps = state => ({
+//   albums: state.albums
 // });
 //
 // const mapDispatchToProps = dispatch => ({
-//   destroyPhoto: (photos) => (dispatch(destroyPhoto(photos)))
+//   updateAlbum: (album, success) => dispatch(updateAlbum(album, success))
 // });
 //
 // export default connect(

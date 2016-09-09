@@ -66,7 +66,7 @@ class CreateAlbumForm extends React.Component {
  								onChange={this.update("title")}
  								className="create-input" />
  						<br />
- 						<input type="submit" value="CREATE" />
+ 						<input className="set-submit" type="submit" value="CREATE" />
              <br/>
 
  					</div>

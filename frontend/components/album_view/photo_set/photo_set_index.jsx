@@ -57,7 +57,7 @@ class PhotoSetsIndex extends React.Component {
           style={this.state.style}>
 
           <CreatePhotoSetContainer album={this.props.album} closeModal={this.closeModal} />
-          <button onClick={this.closeModal}>Close</button>
+          <button className="close-modal" onClick={this.closeModal}>Close</button>
         </Modal>
       </section>
 

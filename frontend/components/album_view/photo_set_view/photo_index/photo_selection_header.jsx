@@ -16,6 +16,7 @@ class PhotoSelectionHeader extends React.Component {
     this.selectedPhotos = this.selectedPhotos.bind(this);
     this.setView = this.setView.bind(this);
     this.setDelete = this.setDelete.bind(this);
+    this.makeCover = this.makeCover.bind(this);
     this.state = {
      modalOpen: false,
      style: {SliderStyle},
@@ -52,6 +53,16 @@ class PhotoSelectionHeader extends React.Component {
     return photos;
   }
 
+  makeCover(e){
+    e.preventDefault();
+    //too hacky, refactor
+    let albumId = this.props.photoSet.album_id;
+    let album = this.props.albums[albumId];
+    album.cover_photo_id = this.props.selected[0];
+    this.props.updateAlbum({album});
+
+  }
+
   render(){
     let component;
     if (this.state.type === "view") {
@@ -62,9 +73,10 @@ class PhotoSelectionHeader extends React.Component {
         <div>
           <DeletePhotoContainer photos={this.selectedPhotos()} closeModal={this.closeModal}
             clearSelection={this.props.clearSelection}/>
-          <button onClick={this.closeModal}>Close</button>
+          <button className="close-modal" onClick={this.closeModal}>Close</button>
         </div>);
     }
+    let makeCover = !(this.props.selected.length === 1);
 
     if (this.props.selected.length > 0) {
       return(
@@ -75,6 +87,7 @@ class PhotoSelectionHeader extends React.Component {
             <span onClick={this.props.clearSelection} >{"Clear Selection"}</span>
           </div>
           <div>
+            <button onClick={this.makeCover} disabled={makeCover}>Make Cover</button>
             <button onClick={this.setView}>View</button>
             <button onClick={this.setDelete}>Delete</button>
           </div>

@@ -40,15 +40,19 @@ class CreateAlbumForm extends React.Component {
   }
 
   renderErrors() {
-    return(
-			<ul>
-				{this.props.errors.map( (error, i) => (
-					<li className="error" key={i}>
-						{error}
-					</li>
-				))}
-			</ul>
-		);
+    if (this.props.errors){
+      return(
+  			<ul>
+  				{this.props.errors.map( (error, i) => (
+  					<li className="error" key={i}>
+  						{error}
+  					</li>
+  				))}
+  			</ul>
+  		);
+    } else {
+      return(<ul></ul>);
+    }
 
   }
 

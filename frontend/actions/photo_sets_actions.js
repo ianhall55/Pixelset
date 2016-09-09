@@ -34,9 +34,10 @@ export const updatePhotoSet = (photo_set, success) => ({
   success
 });
 
-export const destroyPhotoSet = (photo_set) => ({
+export const destroyPhotoSet = (photo_set, success) => ({
   type: PhotoSetConstants.DESTROY_PHOTOSET,
-  photo_set
+  photo_set,
+  success
 });
 
 export const receiveAllPhotoSets = (photoSets) => ({

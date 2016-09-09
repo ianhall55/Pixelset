@@ -70,7 +70,7 @@ class UpdatePhotoSetForm extends React.Component {
  								onChange={this.update("title")}
  								className="create-input" />
  						<br />
- 						<input type="submit" value="Update" />
+ 						<input className="set-submit" type="submit" value="Update" />
              <br/>
 
  					</div>

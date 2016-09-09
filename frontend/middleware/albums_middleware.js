@@ -32,7 +32,9 @@ const AlbumsMiddleware = ({getState, dispatch}) => next => action => {
     case AlbumConstants.UPDATE_ALBUM:
       const updateAlbumSuccess = (data) => {
         dispatch(receiveAlbum(data));
-        action.success();
+        if (action.success) {
+          action.success();
+        }
       };
       errorCallback = (xhr) => {
         const errors = xhr.responseJSON;
