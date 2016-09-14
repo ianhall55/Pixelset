@@ -20,8 +20,10 @@ class PhotosIndex extends React.Component {
 
   upload(e){
     e.preventDefault();
+    let uploadOptions = window.cloudinary_options;
+    uploadOptions['theme'] = 'minimal';
     cloudinary.openUploadWidget(
-      window.cloudinary_options,
+      uploadOptions,
       function(error, images) {
         if (error === null) {
           const photo = {photo: {image_url: images[0].url,
