@@ -74,27 +74,27 @@ Photo.create!({image_url: 'http://res.cloudinary.com/de79besd8/image/upload/v147
 Photo.create!({image_url: 'http://res.cloudinary.com/de79besd8/image/upload/v1473179925/seed/mountains/m1.jpg', ord: 1,
   photo_set_id: p3.id, public_id: 'seed/mountains/m1'})
 Photo.create!({image_url: 'http://res.cloudinary.com/de79besd8/image/upload/v1473179968/seed/mountains/m2.jpg', ord: 2,
-  photo_set_id: p3.id, public_id: 'seed/mountains/m2'})
+  photo_set_id: p3.id, public_id: 'seed/mountains/m2' })
 cp2 = Photo.create!({image_url: 'http://res.cloudinary.com/de79besd8/image/upload/v1473179964/seed/mountains/m3.jpg', ord: 3,
-  photo_set_id: p3.id, public_id: 'seed/mountains/m3'})
+  photo_set_id: p3.id, public_id: 'seed/mountains/m3' })
 Photo.create!({image_url: 'http://res.cloudinary.com/de79besd8/image/upload/v1473179980/seed/mountains/m4.jpg', ord: 4,
-  photo_set_id: p3.id, public_id: 'seed/mountains/m4'})
+  photo_set_id: p3.id, public_id: 'seed/mountains/m4' })
 Photo.create!({image_url: 'http://res.cloudinary.com/de79besd8/image/upload/v1473179947/seed/mountains/m5.jpg', ord: 5,
-  photo_set_id: p3.id, public_id: 'seed/mountains/m5'})
+  photo_set_id: p3.id, public_id: 'seed/mountains/m5' })
 Photo.create!({image_url: 'http://res.cloudinary.com/de79besd8/image/upload/v1473179965/seed/mountains/m6.jpg', ord: 6,
-  photo_set_id: p3.id, public_id: 'seed/mountains/m6'})
+  photo_set_id: p3.id, public_id: 'seed/mountains/m6' })
 Photo.create!({image_url: 'http://res.cloudinary.com/de79besd8/image/upload/v1473179963/seed/mountains/m7.jpg', ord: 7,
-  photo_set_id: p3.id, public_id: 'seed/mountains/m7'})
+  photo_set_id: p3.id, public_id: 'seed/mountains/m7' })
 Photo.create!({image_url: 'http://res.cloudinary.com/de79besd8/image/upload/v1473179956/seed/mountains/m9.jpg', ord: 8,
-  photo_set_id: p3.id, public_id: 'seed/mountains/m9'})
+  photo_set_id: p3.id, public_id: 'seed/mountains/m9' })
 Photo.create!({image_url: 'http://res.cloudinary.com/de79besd8/image/upload/v1473179951/seed/mountains/m8.jpg', ord: 9,
-  photo_set_id: p3.id, public_id: 'seed/mountains/m8'})
+  photo_set_id: p3.id, public_id: 'seed/mountains/m8' })
 Photo.create!({image_url: 'http://res.cloudinary.com/de79besd8/image/upload/v1473179951/seed/mountains/m10.jpg', ord: 9,
-  photo_set_id: p3.id, public_id: 'seed/mountains/m10'})
+  photo_set_id: p3.id, public_id: 'seed/mountains/m10' })
 Photo.create!({image_url: 'http://res.cloudinary.com/de79besd8/image/upload/v1473179951/seed/mountains/m11.jpg', ord: 9,
-  photo_set_id: p3.id, public_id: 'seed/mountains/m11'})
+  photo_set_id: p3.id, public_id: 'seed/mountains/m11' })
 Photo.create!({image_url: 'http://res.cloudinary.com/de79besd8/image/upload/v1473179951/seed/mountains/m12.jpg', ord: 9,
-  photo_set_id: p3.id, public_id: 'seed/mountains/m12'})
+  photo_set_id: p3.id, public_id: 'seed/mountains/m12' })
 
 cp3 = Photo.create!({image_url: 'http://res.cloudinary.com/de79besd8/image/upload/v1473179925/seed/animals/a1.jpg', ord: 1,
   photo_set_id: p4.id, public_id: 'seed/animals/a1'})

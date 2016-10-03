@@ -25,11 +25,10 @@ class PhotoIndexItem extends React.Component {
   }
 
   render(){
-
     return(
     <li onClick={this.handleClick} className={this.selectClass()}>
       <img src={url(this.props.photo.public_id + ".jpg", {
-        width: 100, height: 100,
+        width: 100, height: 100, crop: "fill",
         cloud_name: window.cloudinary_options['cloud_name']
       })} />
 
