@@ -7,7 +7,7 @@ const Splash = ({children}) => (
     <div >
       <section className='splash-body'>
         <header className="splash-header">
-          <h1 className='splash-logo'>P I X E L S</h1>
+          <h1 className='splash-logo'>P I X E L S E T</h1>
           <GreetingContainer/>
         </header>
         <div className="splash-content">
