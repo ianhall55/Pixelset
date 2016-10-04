@@ -89,8 +89,8 @@ Photo.create!({image_url: 'http://res.cloudinary.com/de79besd8/image/upload/v147
   photo_set_id: p3.id, public_id: 'seed/mountains/m9' })
 Photo.create!({image_url: 'http://res.cloudinary.com/de79besd8/image/upload/v1473179951/seed/mountains/m8.jpg', ord: 9,
   photo_set_id: p3.id, public_id: 'seed/mountains/m8' })
-Photo.create!({image_url: 'http://res.cloudinary.com/de79besd8/image/upload/v1473179951/seed/mountains/m10.jpg', ord: 9,
-  photo_set_id: p3.id, public_id: 'seed/mountains/m10' })
+# Photo.create!({image_url: 'http://res.cloudinary.com/de79besd8/image/upload/v1473179951/seed/mountains/m10.jpg', ord: 9,
+#   photo_set_id: p3.id, public_id: 'seed/mountains/m10' })
 Photo.create!({image_url: 'http://res.cloudinary.com/de79besd8/image/upload/v1473179951/seed/mountains/m11.jpg', ord: 9,
   photo_set_id: p3.id, public_id: 'seed/mountains/m11' })
 Photo.create!({image_url: 'http://res.cloudinary.com/de79besd8/image/upload/v1473179951/seed/mountains/m12.jpg', ord: 9,

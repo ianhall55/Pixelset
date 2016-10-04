@@ -34,7 +34,6 @@ class AlbumsIndex extends React.Component {
 
   handleDestroy(e) {
     e.preventDefault();
-    debugger;
     const album = e.currentTarget();
     this.destroyAlbum(album);
   }

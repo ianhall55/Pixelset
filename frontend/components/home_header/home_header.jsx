@@ -26,7 +26,7 @@ class HomeHeader extends React.Component {
       <header className="home-header">
         <div className="home-header-link">
           { <Link to="/">
-              <h1 className="home-header-link">M</h1>
+              <h1 className="home-header-link">P</h1>
             </Link> }
         </div>
         <navbar className="home-nav">
